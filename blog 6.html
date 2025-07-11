@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DSA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="./img/logo.png.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .clickable {
+            color: rgb(249, 249, 255);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <!-- Google Maps Link -->
+                    <small class="me-3 text-light">
+                        <i class="fa fa-map-marker-alt me-2"></i>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Sinnar,+Nashik,+Maharashtra,+India"
+                            target="_blank" class="clickable">Sinnar, Nashik, Maharashtra, India</a>
+                    </small>
+                    <!-- Phone Dialer -->
+                    <small class="me-3">
+                        <i class="fa fa-phone-alt me-2"></i>
+                        <a href="tel:+917219080839" class="clickable">+91 7219080839</a>
+                    </small>
+                    <!-- Email Client -->
+                    <small>
+                        <i class="fa fa-envelope-open me-2"></i>
+                        <a href="mailto:datasoftwareanalysis@gmail.com"
+                            class="clickable">datasoftwareanalysis@gmail.com</a>
+                    </small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://www.facebook.com/profile.php?id=100093082359714"><i
+                            class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://www.linkedin.com/in/er-rushikesh-kekane-8018a41a7/"><i
+                            class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://www.instagram.com/data_software_analysis/?hl=en"><i
+                            class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <img src="./img/company logo.png" alt="Logo" class="responsive-logo" style="width: 70px; height: auto;">
+                <span id="brand-name"
+                    style="font-size: 1rem; font-weight: bold; color: white; margin-left: 6px; transition: color 0.3s ease;">
+                    Data-Software Analysis
+                </span>
+            </a>
+            <script>
+                function applyResponsiveStyles() {
+                    var brandName = document.getElementById("brand-name");
+                    if (window.innerWidth <= 768) {
+                        brandName.style.color = "blue"; // Blue on mobile
+                        brandName.style.fontSize = "0.9rem"; // Even smaller for mobile
+                    } else {
+                        brandName.style.fontSize = "1rem"; // Small for desktop
+                    }
+                }
+
+                // Apply styles on load and when resizing
+                window.addEventListener("load", applyResponsiveStyles);
+                window.addEventListener("resize", applyResponsiveStyles);
+
+                // Change color on scroll (only for desktop)
+                window.addEventListener("scroll", function () {
+                    var brandName = document.getElementById("brand-name");
+                    if (window.innerWidth > 768) {
+                        brandName.style.color = window.scrollY > 50 ? "blue" : "white";
+                    }
+                });
+            </script>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <div class="nav-item dropdown">
+                        <a href="blog.html" class="nav-link active">Blog</a>
+                        <!-- <div class="dropdown-menu m-0">
+                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                            <a href="detail.html" class="dropdown-item active">Blog Detail</a>
+                        </div> -->
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Why Us</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="feature.html" class="dropdown-item">Our features</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="quote.html" class="dropdown-item">Free Quote</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <!-- <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+                <a href="https://htmlcodex.com/startup-company-website-template" class="btn btn-primary py-2 px-4 ms-3">Download Pro Version</a> -->
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Blog 6</h1>
+                    <a href="" class="h5 text-white">Blog</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="" class="h5 text-white">Blog 6</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3"
+                            placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <!-- Blog Detail Start -->
+                    <div class="mb-5">
+                        <img class="img-fluid w-100 rounded mb-5" src="img/Ai 1.jpg" alt="">
+                        <h1 class="mb-4">"The Impact Of AI on Software Development in 2025"
+                        </h1>
+                        <p>AI is changing how we make, test, and use software. By 2025, <b>ai in enterprise software
+                                development</b> will be the norm. Tools will automatically write code and
+                            make<b>ai-driven saas
+                                applications</b> better.
+                        </p>
+                        <p> From <b>ai and software microservices</b> to <b>ai in low-code development</b>, smarter
+                            systems are
+                            becoming more common. Teams are using <b>ai for full-stack development</b>. This improves
+                            everything from backend to <b>ai for frontend optimization</b>.
+                        </p>
+                        <p>Developers around the world are using <b>ai-powered ui/ux tools</b> and <b>ai-driven chatbot
+                                development</b> to make work easier. Trends like <b>ai in java programming</b> and <b>ai
+                                for python
+                                development</b> show AI's role in core languages. This change impacts coding, <b>ai in
+                                continuous
+                                delivery pipelines</b>, and <b>aiops</b> for better IT management.
+                        </p>
+                        <br>
+                        <h6 class="mb-4">Key Takeaways:</h6>
+                        <p>1.AI transforms <b>ai and ar/vr software solutions</b> and <b>ai in blockchain
+                                development</b>.<br>
+                            2.Tools like <b>ai in cross-platform development</b> reduce <b>time</b>-to-market for apps.
+                            <br>
+                            3. <b>Ai for cybersecurity software</b> and <b>ai in iot software development</b> enhance
+                            security and
+                            scalability.<br>
+                            4. <b>Ai-driven automation testing</b> and <b>ai for software debugging</b> improve code
+                            quality.<br>
+                            5. Enterprises prioritise <b>ai-powered cloud-native applications</b> and <b>ai in fintech
+                                applications.</b>
+                        </p>
+                        <br>
+                        <h6 class="mb-4">The Evolution of AI in Software Development:</h6>
+                        <p>AI has changed how we build software, from coding to system design. Now, AI tools automate
+                            tasks that used to take hours. This makes development more efficient.</p>
+                        <img class="img-fluid w-100 rounded mb-5" src="img/AI 2.jpg" alt="">
+                        <br>
+                        <h6 class="mb-4">Emergence of AI Technologies in Coding: </h6>
+                        <p>Today's coding environments use AI to boost productivity. <b>AI-driven API development</b>
+                            and <b>AI in
+                                serverless computing</b> help developers innovate. They also improve <b>AI-powered
+                                database
+                                management </b>, keeping data safe without constant checks. Key advancements include:
+                        </p>
+                        <p>1. Automated code suggestions using <b>AI and NLP in software automation</b>. <br>
+                            2. Real-time error detection through <b>AI in data science programming</b>. <br></p>
+                        <br>
+                        <h6 class="mb-4">From Traditional to AI-Driven Software Architectures:</h6>
+                        <p>Old architectures are being replaced by smarter systems. <b>AI and edge computing
+                                software</b> cut
+                            down latency for IoT devices. <b>AI in 5G software applications</b> speeds up data
+                            processing.
+                            Modern frameworks use <b>AI-powered big data analytics</b> to handle large datasets easily.
+                            Key
+                            shifts include: <br> <br>
+                            1. Adoption of <b>AI-driven open-source development tools</b> for team projects. <br>
+                            2. Integration of <b>AI in creative coding and design</b> for unique solutions. <br>
+                        </p><br>
+                        <h6 class="mb-4">Influence on DevOps and Agile Methodologies:</h6>
+                        <p>DevOps pipelines now use <b>AI for predictive software analytics</b> to spot issues early.
+                            <b>AI-powered software decision-making</b> tools speed up testing. <b>AI-driven digital
+                                transformation</b>
+                            makes deployment faster. Agile teams use AI to:
+                        </p><br>
+                        <p>1. Automate repetitive tasks with <b>AI and robotic process automation (RPA)</b>. <br>
+                            2. Optimise <b>ERP software optimization</b> with real-<b>time</b> insights.</p><br>
+                        <p>AI is more than a tool; it's a fundamental change shaping software's future.</p><br>
+                        <h6 class="mb-4">How AI is Changing Software Development in 2025:</h6>
+                        <p>By 2025, ai in software development is key to innovation. It changes how teams build, test,
+                            and deploy apps. The financial times and business insider show how ai coding tools 2025 make
+                            workflows smoother, from start to finish.</p><br>
+                        <h6 class="mb-4">Key AI-Driven Trends Shaping the Future:</h6>
+                        <p>1. Generative AI makes ai-driven code generation faster, freeing up time for more complex
+                            tasks in ai in mobile app development. <br>
+                            2. Ai coding assistants now do 40% of debugging, as wsj reports. Ai-enhanced development
+                            environments also improve teamwork in real time.<br>
+                            3. MACHINE LEARNING IN SOFTWARE ENGINEERING helps predict problems in ai in software
+                            maintenance and finds security risks.</p> <br>
+                        <h6 class="mb-4">Implications for Developers and Project Management:</h6>
+                        <p>Teams focus on ai and agile methodologies now. Ai and software project management tools like
+                            ai-driven development tools make planning easier. Developers focus on strategy, not just
+                            coding.</p><br>
+                        <p>Axios says there's a 30% increase in ai in devops use. This cuts down deployment times by
+                            half.</p><br>
+                        <h6 class="mb-4">Full-Stack and Backend Transformations:</h6>
+                        <p>Full-stack developers use ai in software design for quick prototyping. Backend teams use ai
+                            for bug detection instantly. The australian shows how ai software development lifecycle
+                            tools cut manual testing by 60%, speeding up development.</p><br>
+                        <p>Even old systems get a boost with ai in software security. This keeps them up to date with
+                            global standards.</p><br>
+                        <p>These changes are changing innovation. From ai in user experience design to ai-driven code
+                            generation, AI is already shaping our future.</p><br>
+
+                        <h6 class="mb-4">Innovative AI-Driven Tools and Practices:</h6>
+                        <p>AI is changing software development with tools that focus on efficiency and new ideas. These
+                            tools make user interactions smarter and workflows more automated.</p><br>
+                        <h6 class="mb-4">AI-Powered UI/UX and Chatbot Development:</h6>
+                        <p>AI chatbots now offer custom user experiences. Tools like Dialogflow and Watson Assistant use
+                            AI to make interactions more personal. <b>Wired</b> says 70% of startups use AI for
+                            chatbots,
+                            making customer interactions better without coding.</p><br>
+                        <h6 class="mb-4">Enhancing Code Optimisation and Debugging:</h6>
+                        <p>AI tools can check code in real time and find errors before they cause problems. Platforms
+                            like DeepCode and Kite make debugging 40% faster than old methods. AI also helps cut costs
+                            and improve quality assurance.</p><br>
+                        <p>1. Automatic error detection. <br>
+                            2. Performance tuning through <b>ai in software analytics.</b> <br>
+                            3. 4x faster compliance checks with <b>ai and software compliance</b> tools.</p><br>
+                        <h6 class="mb-4">AI in Low-Code, Serverless Computing and Cloud-Native Apps:</h6>
+                        <p>Low-code platforms like OutSystems use AI for quick app building. Serverless frameworks with
+                            AI save 35% on costs. AI also boosts cloud-native apps to handle more traffic than old
+                            systems.</p><br>
+                        <p>Barron’s says 60% of companies use these tools for faster software development. This cuts
+                            development time by 50%.</p><br>
+                        <h6 class="mb-4">Embracing the Future of Software Innovation:</h6>
+                        <p>Software ecosystems in 2025 are changing thanks to AI. AI helps in managing supply chains and
+                            forecasting demand. It also makes smarter choices in buying and managing vendors. <br><br>
+                            Companies using AI in managing software assets and licensing can make more money. They also
+                            face less risk. India's tech sector is using these tools to make outsourcing better and
+                            contracts easier to manage. <br><br>
+                            Innovation hubs and AI labs are helping startups grow fast. They use hackathons and teamwork
+                            to speed up product making. People need to learn AI to keep up in their careers. <br><br>
+                            AI is now key in software research and development. It helps in getting patents and managing
+                            intellectual property. This ensures labs focus on ethical innovation. <br><br>
+                            Investing in AI helps companies lead in mergers and acquisitions. This leads to a culture of
+                            always getting better. <br><br>
+                            Working together is important for global teams using AI. They manage knowledge and risks
+                            better. In India, software communities are linking schools and businesses, sharing
+                            knowledge. <br><br>
+                            By using AI in all stages of software development, companies can change how they make
+                            software. The future is for those who invest in AI research, educate talent, and join
+                            innovation contests. They will shape tomorrow's tech world.</p>
+
+                        <h4>Er. Rushikesh Kekane</h4>
+                        <p style="color: #061429;">Founder<br>"DATA-SOFTWARE ANALYSIS"</p>
+                    </div>
+                    <!-- Blog Detail End -->
+
+                    <!-- Comment Form Start -->
+                    <div class="bg-light rounded p-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Leave A Comment</h3>
+                        </div>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control bg-white border-0" placeholder="Your Name"
+                                        style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control bg-white border-0" placeholder="Your Email"
+                                        style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control bg-white border-0" placeholder="Website"
+                                        style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control bg-white border-0" rows="5"
+                                        placeholder="Comment"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Leave Your Comment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Comment Form End -->
+                </div>
+
+                <!-- Sidebar Start -->
+                <div class="col-lg-4">
+                    <!-- Search Form Start -->
+                    <!-- <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Keyword">
+                            <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div> -->
+                    <!-- Search Form End -->
+
+                    <!-- Category Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Categories</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>Artificial Intelligence</a>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>Deep Learning</a>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>Machine Learning</a>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>SEO Optimization</a>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>Website Developemnt</a>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>Social Media Marketing</a>
+
+                        </div>
+                    </div>
+                    <!-- Category End -->
+
+                    <!-- Recent Post Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Recent Post</h3>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/AI.png"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 1.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">"Revolutionizing
+                                Robotics and Computer Interaction: The Power of AI Voice Technology"
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/DL.png"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 2.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">“Quantum
+                                Machine Learning: A Fusion of Deep Learning and Quantum Computing”
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/ML.png"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 3.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">“ Unraveling
+                                the Mysteries of Transfer Learning in Machine Learning”
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/SEO.jpg"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 4.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">"Mastering SEO:
+                                Proven Strategies to Boost Your Online Presence in 2025"
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/website development.png"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 5.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">"Boost Your Online
+                                Presence with Expert Website Development Services for Maximum Impact"
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/Ai 1.jpg"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 6.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">"The Impact Of AI On Software Development In 2025"
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Recent Post End -->
+
+                    <!-- Image Start -->
+                    <!-- <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <img src="img/blog-1.jpg" alt="" class="img-fluid rounded">
+                    </div> -->
+                    <!-- Image End -->
+
+                    <!-- Tags Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Tag Cloud</h3>
+                        </div>
+                        <div class="d-flex flex-wrap m-n1">
+                            <a href="" class="btn btn-light m-1">Design</a>
+                            <a href="" class="btn btn-light m-1">Development</a>
+                            <a href="" class="btn btn-light m-1">Marketing</a>
+                            <a href="" class="btn btn-light m-1">SEO</a>
+                            <a href="" class="btn btn-light m-1">Writing</a>
+                            <a href="" class="btn btn-light m-1">Consulting</a>
+                            <a href="" class="btn btn-light m-1">Analysis</a>
+                        </div>
+                    </div>
+                    <!-- Tags End -->
+
+                    <!-- Plain Text Start -->
+                    <!-- <div class="wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Plain Text</h3>
+                        </div>
+                        <div class="bg-light text-center" style="padding: 30px;">
+                            <p>Vero sea et accusam justo dolor accusam lorem consetetur, dolores sit amet sit dolor
+                                clita kasd justo, diam accusam no sea ut tempor magna takimata, amet sit et diam dolor
+                                ipsum amet diam</p>
+                            <a href="" class="btn btn-primary py-2 px-4">Read More</a>
+                        </div>
+                    </div> -->
+                    <!-- Plain Text End -->
+                </div>
+                <!-- Sidebar End -->
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about text-center">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
+                        <img src="./img/company logo.png" alt="Company Logo" style="width: 25%;">
+                        <h5 class="ms-2 text-white">Data-Software Analysis</h5>
+                    </a>
+
+                    <p class="mt-3 mb-0">
+                        <strong>Data-Software Analysis</strong> is a forward-thinking software startup committed to
+                        delivering
+                        cutting-edge solutions in data analytics, software development, and technology consulting. Our
+                        mission
+                        is to empower businesses with innovative tools and insights that drive growth and efficiency.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Sinnar, Nashik, Maharashtra, India</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <a href="mailto:datasoftwareanalysis@gmail.com"
+                                    class="text-primary text-decoration-underline">
+                                    datasoftwareanalysis@gmail.com
+                                </a>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <a href="tel:+917219080839" class="text-primary text-decoration-underline">
+                                    +91 7219080839
+                                </a>
+                            </div>
+
+
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.facebook.com/profile.php?id=100093082359714"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.linkedin.com/in/er-rushikesh-kekane-8018a41a7/"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.instagram.com/data_software_analysis/"><i
+                                        class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Quick Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="./index.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-light mb-2" href="./about.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-light mb-2" href="./service.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light" href="./contact.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a><br>
+                                <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                    <h5 class="text-light mb-0">Legal & Policies</h5>
+                                </div>
+                                <div class="link-animated d-flex flex-column justify-content-start">
+                                    <a class="text-light mb-2" href="privacy/privacypolicy.html">
+                                        <i class="bi bi-arrow-right text-primary me-2"></i>Privacy Policy
+                                    </a>
+                                    <a class="text-light mb-2" href="Privacy/terms&condition.html">
+                                        <i class="bi bi-arrow-right text-primary me-2"></i>Terms & Conditions
+                                    </a>
+                                    <a class="text-light mb-2" href="Privacy/FAQ.html">
+                                        <i class="bi bi-arrow-right text-primary me-2"></i>FAQ
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Popular Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="./testimonial.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Testimonials</a>
+                                <a class="text-light mb-2" href="./feature.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Features</a>
+                                <a class="text-light mb-2" href="./service.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light mb-2" href="sitemap.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Sitemap</a>
+                                <a class="text-light mb-2" href="./blog.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
+                                <a class="text-light" href="./quote.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Free Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429;">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="container">
+                    <div class="copyright">
+                        Copyright 2023 &copy; <strong><span>Data-Software Analysis</span></strong>. All Rights Reserved
+                    </div>
+                    <div class="credits">
+                        <p style="align-self:center;">Made in <b><span style="color: orange;">IN</span>D<span
+                                    style="color: rgb(0, 255, 0);">IA</span></b> with <span
+                                style="color: rgb(243, 17, 17);">&#x2764;</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

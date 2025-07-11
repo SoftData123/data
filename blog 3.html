@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DSA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="./img/logo.png.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .clickable {
+            color: rgb(249, 249, 255);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <!-- Google Maps Link -->
+                    <small class="me-3 text-light">
+                        <i class="fa fa-map-marker-alt me-2"></i>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Sinnar,+Nashik,+Maharashtra,+India"
+                            target="_blank" class="clickable">Sinnar, Nashik, Maharashtra, India</a>
+                    </small>
+                    <!-- Phone Dialer -->
+                    <small class="me-3">
+                        <i class="fa fa-phone-alt me-2"></i>
+                        <a href="tel:+917219080839" class="clickable">+91 7219080839</a>
+                    </small>
+                    <!-- Email Client -->
+                    <small>
+                        <i class="fa fa-envelope-open me-2"></i>
+                        <a href="mailto:datasoftwareanalysis@gmail.com"
+                            class="clickable">datasoftwareanalysis@gmail.com</a>
+                    </small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://www.facebook.com/profile.php?id=100093082359714"><i
+                            class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://www.linkedin.com/in/er-rushikesh-kekane-8018a41a7/"><i
+                            class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://www.instagram.com/data_software_analysis/?hl=en"><i
+                            class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <img src="./img/company logo.png" alt="Logo" class="responsive-logo" style="width: 70px; height: auto;">
+                <span id="brand-name"
+                    style="font-size: 1rem; font-weight: bold; color: white; margin-left: 6px; transition: color 0.3s ease;">
+                    Data-Software Analysis
+                </span>
+            </a>
+            <script>
+                function applyResponsiveStyles() {
+                    var brandName = document.getElementById("brand-name");
+                    if (window.innerWidth <= 768) {
+                        brandName.style.color = "blue"; // Blue on mobile
+                        brandName.style.fontSize = "0.9rem"; // Even smaller for mobile
+                    } else {
+                        brandName.style.fontSize = "1rem"; // Small for desktop
+                    }
+                }
+
+                // Apply styles on load and when resizing
+                window.addEventListener("load", applyResponsiveStyles);
+                window.addEventListener("resize", applyResponsiveStyles);
+
+                // Change color on scroll (only for desktop)
+                window.addEventListener("scroll", function () {
+                    var brandName = document.getElementById("brand-name");
+                    if (window.innerWidth > 768) {
+                        brandName.style.color = window.scrollY > 50 ? "blue" : "white";
+                    }
+                });
+            </script>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <div class="nav-item dropdown">
+                        <a href="blog.html" class="nav-link active">Blog</a>
+                        <!-- <div class="dropdown-menu m-0">
+                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                            <a href="detail.html" class="dropdown-item active">Blog Detail</a>
+                        </div> -->
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Why Us</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="feature.html" class="dropdown-item">Our features</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="quote.html" class="dropdown-item">Free Quote</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <!-- <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+                <a href="https://htmlcodex.com/startup-company-website-template" class="btn btn-primary py-2 px-4 ms-3">Download Pro Version</a> -->
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Blog 3</h1>
+                    <a href="" class="h5 text-white">Blog</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="" class="h5 text-white">Blog 3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3"
+                            placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <!-- Blog Detail Start -->
+                    <div class="mb-5">
+                        <img class="img-fluid w-100 rounded mb-5" src="img/ML.png" alt="">
+                        <h1 class="mb-4">“Unraveling the Mysteries of Transfer Learning in Machine Learning”
+                        </h1>
+                        <p> Machine learning has witnessed remarkable advancements over the years, and one of the key
+                            breakthroughs contributing to its success is transfer learning. Transfer learning is a
+                            paradigm that leverages knowledge gained from one task to improve performance on a different
+                            but related task. </p>
+                        <p> This approach has revolutionized the landscape of machine learning by enabling models to
+                            learn from existing knowledge and adapt it to new domains, ultimately enhancing efficiency
+                            and effectiveness. In this article, we will delve into the intricacies of transfer learning,
+                            exploring its principles, applications, and future prospects. Machine Learning (ML) has
+                            witnessed unprecedented growth in recent years, transforming industries and shaping the
+                            technological landscape. </p>
+                        <p>One of the key advancements that has significantly contributed to this progress is Transfer
+                            Learning. Transfer Learning is a paradigm within ML that leverages pre-trained models to
+                            improve the performance of tasks in new and related domains. In this article, we will
+                            explore the concept of Transfer Learning, its applications, benefits, and the impact it has
+                            on the field of machine learning.</p><br>
+                        <h6 class="mb-4">Understanding Transfer Learning:</h6>
+                        <p>Traditional machine learning models are trained on specific datasets to perform a particular
+                            task. However, these models often struggle when faced with new tasks or domains due to the
+                            lack of relevant data. Transfer learning addresses this limitation by allowing models to
+                            transfer knowledge gained from one task to another. This process involves pre-training a
+                            model on a source task and then fine-tuning it on a target task. </p>
+                        <p>Transfer Learning involves taking knowledge learned from one task and applying it to a
+                            different but related task. Traditional machine learning models are typically trained on
+                            large datasets for a specific task and lack the ability to generalize well to new and unseen
+                            data. Transfer Learning, on the other hand, capitalizes on the knowledge gained from a
+                            source task to enhance the learning process for a target task.</p>
+                        <br>
+                        <h6 class="mb-4">Types of Transfer Learning:</h6>
+                        <p>1. Transfer learning can be categorized into three main types: domain adaptation, inductive
+                            transfer, and transductive transfer.</p>
+                        <p>2. Domain Adaptation: In domain adaptation, the source and target tasks are the same, but the
+                            distributions of the data differ. The goal is to adapt the model to perform well on the
+                            target domain despite differences in the data distribution.</p>
+                        <p>3. Inductive Transfer: Inductive transfer involves learning a general representation from the
+                            source task and applying it to a new and unrelated target task. This is particularly useful
+                            when there is limited labeled data available for the target task.</p>
+                        <p>4. Transductive Transfer: Transductive transfer learning deals with scenarios where the
+                            model needs to predict labels for specific instances rather than generalizing to an entire
+                            dataset. This approach is beneficial when making predictions on individual data points is
+                            the primary objective.</p><br>
+                        <h6 class="mb-4">Applications of Transfer Learning: </h6>
+                        <p>Transfer learning has found applications across various domains, contributing to
+                            breakthroughs in computer vision, natural language processing, and healthcare, among others.
+                        </p>
+                        <p>1.Computer Vision: Image classification, object detection, and image segmentation have all
+                            witnessed significant improvements with the application of transfer learning. Models pre
+                            trained on large datasets, such as ImageNet, have demonstrated remarkable performance when
+                            fine-tuned for specific vision tasks.
+                        </p>
+                        <p>2. Natural Language Processing (NLP): In NLP, transfer learning has played a pivotal role in
+                            the development of language models. Pre-trained models like BERT (Bidirectional Encoder
+                            Representations from Transformers) have set new benchmarks for tasks such as sentiment
+                            analysis, text classification, and named entity recognition.</p>
+                        <p>3. Healthcare: Transfer learning has been instrumental in medical image analysis, disease
+                            prediction, and personalized medicine. Models trained on diverse datasets can be adapted to
+                            specific healthcare tasks, leading to more accurate diagnoses and treatment recommendations.
+                        </p>
+                        <p>4. Image Recognition: Transfer Learning has proven highly effective in image classification
+                            tasks. Pre-trained models, like those trained on ImageNet, can be fine-tuned for specific
+                            image recognition tasks, saving computational resources and time.</p>
+                        <p>5. Natural Language Processing (NLP): In NLP, models pre-trained on large text corpora, such
+                            as BERT or GPT, can be adapted to specific language understanding tasks like sentiment
+                            analysis, named entity recognition, or text summarization.</p>
+                        <p>6. Speech Recognition: Transfer Learning is valuable in speech recognition, where models
+                            trained on large speech datasets ca be fine-tuned for specific applications, like voice
+                            assistants or speaker identification.</p><br>
+                        <h6 class="mb-4"> Challenges and Future Directions:</h6>
+                        <p> While transfer learning has proven to be a powerful tool, it is not without challenges. One
+                            major concern is the risk of negative transfer, where knowledge from the source task hinders
+                            performance on the target task. Striking the right balance between reusing knowledge and
+                            adapting to new data remains a research focus. The future of transfer learning holds
+                            exciting possibilities, with ongoing efforts to develop more robust models that can handle a
+                            broader range of tasks. Improving model interpretability, addressing ethical considerations,
+                            and exploring novel architectures are key areas for further exploration.</p><br>
+                        <h6 class="mb-4"> Impact on Machine Learning:</h6>
+                        <p>Transfer Learning has had a profound impact on the field of machine learning by addressing
+                            some of its longstanding challenges. It has opened up new possibilities for deploying ML
+                            models in real-world scenarios, where access to extensive labeled datasets and computational
+                            resources may be limited. The ability to transfer knowledge across tasks has not only
+                            improved the efficiency of model training but has also contributed to the democratization of
+                            machine learning, enabling a wider range of applications.</p>
+
+                        <h4>Er. Rushikesh Kekane</h4>
+                        <p style="color: #061429;">Founder<br>"DATA-SOFTWARE ANALYSIS"</p>
+                    </div>
+                    <!-- Blog Detail End -->
+
+                    <!-- Comment List Start -->
+                    <!-- <div class="mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">3 Comments</h3>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                            <div class="ps-3">
+                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                                <button class="btn btn-sm btn-light">Reply</button>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                            <div class="ps-3">
+                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                                <button class="btn btn-sm btn-light">Reply</button>
+                            </div>
+                        </div>
+                        <div class="d-flex ms-5 mb-4">
+                            <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                            <div class="ps-3">
+                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                                <button class="btn btn-sm btn-light">Reply</button>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Comment List End -->
+
+                    <!-- Comment Form Start -->
+                    <div class="bg-light rounded p-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Leave A Comment</h3>
+                        </div>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control bg-white border-0" placeholder="Your Name"
+                                        style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control bg-white border-0" placeholder="Your Email"
+                                        style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control bg-white border-0" placeholder="Website"
+                                        style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control bg-white border-0" rows="5"
+                                        placeholder="Comment"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Leave Your Comment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Comment Form End -->
+                </div>
+
+                <!-- Sidebar Start -->
+                <div class="col-lg-4">
+                    <!-- Search Form Start -->
+                    <!-- <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Keyword">
+                            <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div> -->
+                    <!-- Search Form End -->
+
+                    <!-- Category Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Categories</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>Artificial Intelligence</a>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>Deep Learning</a>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>Machine Learning</a>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>SEO Optimization</a>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>Website Developemnt</a>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                                    class="bi bi-arrow-right me-2"></i>Social Media Marketing</a>
+
+                        </div>
+                    </div>
+                    <!-- Category End -->
+
+                    <!-- Recent Post Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Recent Post</h3>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/AI.png"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 1.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">"Revolutionizing
+                                Robotics and Computer Interaction: The Power of AI Voice Technology"
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/DL.png"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 2.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">“Quantum
+                                Machine Learning: A Fusion of Deep Learning and Quantum Computing”
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/ML.png"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 3.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">“ Unraveling
+                                the Mysteries of Transfer Learning in Machine Learning”
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/SEO.jpg"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 4.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">"Mastering SEO:
+                                Proven Strategies to Boost Your Online Presence in 2025"
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/website development.png"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 5.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">"Boost Your Online
+                                Presence with Expert Website Development Services for Maximum Impact"
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/Ai 1.jpg"
+                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="./blog 6.html"
+                                class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">"The Impact Of AI On Software Development In 2025"
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Recent Post End -->
+
+                    <!-- Image Start -->
+                    <!-- <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <img src="img/blog-1.jpg" alt="" class="img-fluid rounded">
+                    </div> -->
+                    <!-- Image End -->
+
+                    <!-- Tags Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Tag Cloud</h3>
+                        </div>
+                        <div class="d-flex flex-wrap m-n1">
+                            <a href="" class="btn btn-light m-1">Design</a>
+                            <a href="" class="btn btn-light m-1">Development</a>
+                            <a href="" class="btn btn-light m-1">Marketing</a>
+                            <a href="" class="btn btn-light m-1">SEO</a>
+                            <a href="" class="btn btn-light m-1">Writing</a>
+                            <a href="" class="btn btn-light m-1">Consulting</a>
+                            <a href="" class="btn btn-light m-1">Analysis</a>
+                            <a href="" class="btn btn-light m-1">Artificial Intelligence</a>
+                        </div>
+                    </div>
+                    <!-- Tags End -->
+
+                    <!-- Plain Text Start -->
+                    <!-- <div class="wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Plain Text</h3>
+                        </div>
+                        <div class="bg-light text-center" style="padding: 30px;">
+                            <p>Vero sea et accusam justo dolor accusam lorem consetetur, dolores sit amet sit dolor
+                                clita kasd justo, diam accusam no sea ut tempor magna takimata, amet sit et diam dolor
+                                ipsum amet diam</p>
+                            <a href="" class="btn btn-primary py-2 px-4">Read More</a>
+                        </div>
+                    </div> -->
+                    <!-- Plain Text End -->
+                </div>
+                <!-- Sidebar End -->
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about text-center">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
+                        <img src="./img/company logo.png" alt="Company Logo" style="width: 25%;">
+                        <h5 class="ms-2 text-white">Data-Software Analysis</h5>
+                    </a>
+
+                    <p class="mt-3 mb-0">
+                        <strong>Data-Software Analysis</strong> is a forward-thinking software startup committed to
+                        delivering
+                        cutting-edge solutions in data analytics, software development, and technology consulting. Our
+                        mission
+                        is to empower businesses with innovative tools and insights that drive growth and efficiency.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Sinnar, Nashik, Maharashtra, India</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <a href="mailto:datasoftwareanalysis@gmail.com"
+                                    class="text-primary text-decoration-underline">
+                                    datasoftwareanalysis@gmail.com
+                                </a>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <a href="tel:+917219080839" class="text-primary text-decoration-underline">
+                                    +91 7219080839
+                                </a>
+                            </div>
+
+
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.facebook.com/profile.php?id=100093082359714"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.linkedin.com/in/er-rushikesh-kekane-8018a41a7/"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.instagram.com/data_software_analysis/"><i
+                                        class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Quick Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="./index.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-light mb-2" href="./about.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-light mb-2" href="./service.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light" href="./contact.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a><br>
+                                <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                    <h5 class="text-light mb-0">Legal & Policies</h5>
+                                </div>
+                                <div class="link-animated d-flex flex-column justify-content-start">
+                                    <a class="text-light mb-2" href="privacy/privacypolicy.html">
+                                        <i class="bi bi-arrow-right text-primary me-2"></i>Privacy Policy
+                                    </a>
+                                    <a class="text-light mb-2" href="Privacy/terms&condition.html">
+                                        <i class="bi bi-arrow-right text-primary me-2"></i>Terms & Conditions
+                                    </a>
+                                    <a class="text-light mb-2" href="Privacy/FAQ.html">
+                                        <i class="bi bi-arrow-right text-primary me-2"></i>FAQ
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Popular Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="./testimonial.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Testimonials</a>
+                                <a class="text-light mb-2" href="./feature.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Features</a>
+                                <a class="text-light mb-2" href="./service.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light mb-2" href="sitemap.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Sitemap</a>
+                                <a class="text-light mb-2" href="./blog.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
+                                <a class="text-light" href="./quote.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Free Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429;">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="container">
+                    <div class="copyright">
+                        Copyright 2023 &copy; <strong><span>Data-Software Analysis</span></strong>. All Rights Reserved
+                    </div>
+                    <div class="credits">
+                        <p style="align-self:center;">Made in <b><span style="color: orange;">IN</span>D<span
+                                    style="color: rgb(0, 255, 0);">IA</span></b> with <span
+                                style="color: rgb(243, 17, 17);">&#x2764;</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
