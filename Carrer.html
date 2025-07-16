@@ -15,12 +15,13 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover no-repeat;
             color: #fff;
             padding: 100px 20px;
             text-align: center;
             animation: fadeIn 1s ease-in-out;
+            border-radius: 0 0 40px 40px;
         }
 
         .hero h1 {
@@ -29,61 +30,64 @@
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-top: 15px;
+            color: #ddd;
         }
 
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 700;
             margin-bottom: 40px;
             text-align: center;
-            color: #212529;
+            color: #343a40;
         }
 
         .job-card {
             border: none;
             border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            background-color: #fff;
             height: 100%;
         }
 
         .job-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
         }
 
         .job-card .btn {
             margin-top: 20px;
-            padding: 8px 20px;
-            width: auto;
+            padding: 10px 25px;
+            font-weight: 600;
         }
 
         .benefits-icon {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #007bff;
             margin-bottom: 10px;
         }
 
         .cta-section {
-            background: linear-gradient(to right, #007bff, #0056b3);
+            background: linear-gradient(to right, #007bff, #004085);
             color: #fff;
             padding: 50px 20px;
             text-align: center;
-            border-radius: 12px;
+            border-radius: 16px;
             margin-top: 60px;
         }
 
         .cta-section h3 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: bold;
         }
 
         .cta-section .btn {
-            font-weight: bold;
+            font-weight: 600;
             margin-top: 15px;
-            padding: 10px 25px;
+            padding: 12px 28px;
+            border-radius: 50px;
         }
 
         footer {
@@ -98,7 +102,15 @@
         }
 
         .navbar-brand img {
-            border-radius: 8px;
+            border-radius: 10px;
+        }
+
+        .section-subtext {
+            font-size: 1rem;
+            color: #6c757d;
+            text-align: center;
+            margin-top: -25px;
+            margin-bottom: 30px;
         }
 
         @keyframes fadeIn {
@@ -119,7 +131,7 @@
             }
 
             .section-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -138,12 +150,13 @@
     <!-- Hero Section -->
     <section class="hero">
         <h1>🚀 Join Our Growing Team</h1>
-        <p>We’re building the future of technology, and we want you on board.</p>
+        <p>We’re building the future of technology — and we want you on board.</p>
     </section>
 
     <!-- Job Openings Section -->
     <section class="container py-5">
         <h2 class="section-title">📌 Open Internships</h2>
+        <p class="section-subtext">Real opportunities. Real experience. No prior experience required.</p>
         <div class="row justify-content-center g-4">
 
             <!-- Social Media Marketer -->
@@ -151,10 +164,9 @@
                 <div class="card job-card p-4 text-center">
                     <h5 class="card-title">Social Media Marketer Intern</h5>
                     <p class="card-text">
-                        📢 We're offering an unpaid internship for enthusiastic individuals eager to manage social media
-                        platforms,
-                        create engaging posts, and assist with ad campaigns on Meta & Google. No experience required —
-                        just creativity and passion!
+                        📢 We're offering an unpaid internship for enthusiastic individuals eager to manage social
+                        media,
+                        create engaging posts, and assist with ad campaigns on Meta & Google.
                     </p>
                     <a href="mailto:datasoftwareanalysis@gmail.com?subject=Application%20for%20Social%20Media%20Marketer%20Internship"
                         class="btn btn-outline-primary">
@@ -168,9 +180,8 @@
                 <div class="card job-card p-4 text-center">
                     <h5 class="card-title">Content Creator Intern</h5>
                     <p class="card-text">
-                        ✍️ We're looking for a creative intern to assist in writing blog posts, social media captions,
-                        and website content. If you love writing and want real-world experience in content marketing,
-                        this unpaid internship is for you — no prior experience needed!
+                        ✍️ Help write blog posts, social captions & web content. If you love writing, this is your
+                        playground.
                     </p>
                     <a href="mailto:datasoftwareanalysis@gmail.com?subject=Application%20for%20Content%20Creator%20Internship"
                         class="btn btn-outline-primary">
@@ -178,17 +189,16 @@
                     </a>
                 </div>
             </div>
+
             <!-- Web Developer -->
             <div class="col-md-6 col-lg-5">
                 <div class="card job-card p-4 text-center">
                     <h5 class="card-title">Web Developer Intern</h5>
                     <p class="card-text">
-                        We're looking for a passionate Web Developer Intern to assist with building and maintaining
-                        websites, optimizing user experiences, and contributing to front-end development projects.
-                        If you're eager to learn, love coding, and want real-world experience in web development, this
-                        unpaid internship is for you — no prior experience needed!
+                        🖥️ Build and maintain responsive web apps using HTML, CSS, JS. Learn and grow with live
+                        projects.
                     </p>
-                    <a href="mailto:datasoftwareanalysis@gmail.com?subject=Application%20for%20Content%20Creator%20Internship"
+                    <a href="mailto:datasoftwareanalysis@gmail.com?subject=Application%20for%20Web%20Developer%20Internship"
                         class="btn btn-outline-primary">
                         Apply Now
                     </a>
@@ -203,6 +213,7 @@
         <h2 class="section-title">💼 Current Job Openings</h2>
         <p class="text-center fs-5 text-muted">No current openings.</p>
     </section>
+
     <!-- Benefits -->
     <section class="container py-5">
         <h2 class="section-title">🎁 Why Join Us?</h2>
@@ -211,21 +222,21 @@
                 <div>
                     <div class="benefits-icon"><i class="fas fa-chart-line"></i></div>
                     <h6>Career Growth</h6>
-                    <p>Advance with training and growth plans.</p>
+                    <p>Advance with training and mentorship plans.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div>
                     <div class="benefits-icon"><i class="fas fa-spa"></i></div>
                     <h6>Work-Life Balance</h6>
-                    <p>Flexible hours & supportive environment.</p>
+                    <p>Flexible hours & a supportive remote culture.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div>
                     <div class="benefits-icon"><i class="fas fa-certificate"></i></div>
                     <h6>Experience Certificate</h6>
-                    <p>Get a certificate on successful completion of the internship.</p>
+                    <p>Official certificate on successful completion.</p>
                 </div>
             </div>
         </div>
