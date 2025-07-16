@@ -36,6 +36,12 @@
             color: rgb(249, 249, 255);
             text-decoration: underline;
         }
+
+        input:focus,
+        textarea:focus {
+            box-shadow: none !important;
+            border-color: #0d6efd;
+        }
     </style>
 </head>
 
@@ -189,64 +195,61 @@
 
 
     <!-- Contact Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid py-5 bg-light wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
                 <h5 class="fw-bold text-primary text-uppercase">Get In Touch</h5>
                 <h1 class="mb-0">We're Here To Help Your Business Grow</h1>
             </div>
+
+            <!-- Info Cards -->
             <div class="row g-5 mb-5">
                 <!-- Phone -->
-                <!-- Phone -->
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.1s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded-circle shadow"
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center p-3 bg-white shadow rounded wow fadeIn" data-wow-delay="0.1s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded-circle me-3"
                             style="width: 60px; height: 60px;">
                             <i class="fa fa-phone-alt text-white fs-4"></i>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Call Us Anytime</h5>
-                            <h4 class="mb-0">
-                                <a href="tel:+917219080839" class="text-primary text-decoration-none">+91 7219080839</a>
-                            </h4>
+                        <div>
+                            <h5 class="mb-1">Call Us Anytime</h5>
+                            <a href="tel:+917219080839" class="text-primary fw-bold text-decoration-none">+91
+                                7219080839</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Email -->
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.4s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded-circle shadow"
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center p-3 bg-white shadow rounded wow fadeIn" data-wow-delay="0.3s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded-circle me-3"
                             style="width: 60px; height: 60px;">
                             <i class="fa fa-envelope-open text-white fs-4"></i>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Email Us</h5>
-                            <h4 class="mb-0">
-                                <a href="mailto:datasoftwareanalysis@gmail.com"
-                                    class="text-primary text-decoration-none">
-                                    datasoftwareanalysis@gmail.com
-                                </a>
-                            </h4>
+                        <div>
+                            <h5 class="mb-1">Email Us</h5>
+                            <a href="mailto:datasoftwareanalysis@gmail.com"
+                                class="text-primary fw-bold text-decoration-none">datasoftwareanalysis@gmail.com</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Address -->
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.8s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded-circle shadow"
+                <div class="col-md-12 col-lg-4">
+                    <div class="d-flex align-items-center p-3 bg-white shadow rounded wow fadeIn" data-wow-delay="0.5s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded-circle me-3"
                             style="width: 60px; height: 60px;">
                             <i class="fa fa-map-marker-alt text-white fs-4"></i>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Visit Our Office</h5>
-                            <h6 class="text-primary mb-0">Shivaji Nagar, Sinnar, Maharashtra 422103</h6>
+                        <div>
+                            <h5 class="mb-1">Visit Our Office</h5>
+                            <p class="text-primary fw-bold mb-0">Shivaji Nagar, Sinnar, Maharashtra 422103</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Form + Map -->
             <div class="row g-5">
                 <!-- Contact Form -->
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
@@ -258,39 +261,34 @@
 
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-primary text-white border-0">
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <input type="text" name="name" class="form-control border-0 bg-light"
+                                <div class="form-floating">
+                                    <input type="text" name="name" class="form-control border-0 bg-light" id="name"
                                         placeholder="Your Name" required>
+                                    <label for="name"><i class="fa fa-user text-primary me-2"></i>Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-primary text-white border-0">
-                                        <i class="fa fa-envelope"></i>
-                                    </span>
-                                    <input type="email" name="email" class="form-control border-0 bg-light"
+                                <div class="form-floating">
+                                    <input type="email" name="email" class="form-control border-0 bg-light" id="email"
                                         placeholder="Your Email" required>
+                                    <label for="email"><i class="fa fa-envelope text-primary me-2"></i>Your
+                                        Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-primary text-white border-0">
-                                        <i class="fa fa-tag"></i>
-                                    </span>
+                                <div class="form-floating">
                                     <input type="text" name="subject" class="form-control border-0 bg-light"
-                                        placeholder="Subject">
+                                        id="subject" placeholder="Subject">
+                                    <label for="subject"><i class="fa fa-tag text-primary me-2"></i>Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-primary text-white border-0">
-                                        <i class="fa fa-comment"></i>
-                                    </span>
-                                    <textarea name="message" class="form-control border-0 bg-light" rows="4"
-                                        placeholder="Your Message" required></textarea>
+                                <div class="form-floating">
+                                    <textarea name="message" class="form-control border-0 bg-light"
+                                        placeholder="Your Message" id="message" style="height: 150px"
+                                        required></textarea>
+                                    <label for="message"><i class="fa fa-comment text-primary me-2"></i>Your
+                                        Message</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -306,28 +304,27 @@
                     </form>
 
                     <script>
-                        // Show thank you message after form submission
+                        // Optional JS: Show thank you message (only if JS is enabled)
                         document.querySelector('form').addEventListener('submit', function () {
                             setTimeout(() => {
                                 document.querySelector('.thank-you-message').classList.remove('d-none');
                             }, 1000);
                         });
                     </script>
-
                 </div>
 
                 <!-- Google Map -->
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
-                    <iframe class="rounded shadow"
+                    <iframe class="rounded shadow" width="100%" height="450" style="border:0;" loading="lazy"
+                        allowfullscreen
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.9139415452505!2d73.98729902499805!3d19.843593931525483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddba5240f6f353%3A0x54017d108f554964!2sShivaji%20Nagar%2C%20Sinnar%2C%20Maharashtra%20422103!5e0!3m2!1sen!2sin!4v1743159099807!5m2!1sen!2sin"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Contact End -->
+
 
 
     <!-- Vendor Start -->
@@ -485,7 +482,7 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-        <!-- Chat With Us WhatsApp Button -->
+    <!-- Chat With Us WhatsApp Button -->
     <a href="https://wa.me/917219080839" class="btn btn-success chat-whatsapp-btn" target="_blank">
         <i class="bi bi-whatsapp"></i> Chat With Us
     </a>

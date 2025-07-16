@@ -36,6 +36,18 @@
             color: rgb(249, 249, 255);
             text-decoration: underline;
         }
+
+        .blog-img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .blog-img:hover {
+            transform: scale(1.05);
+        }
+
+        .card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
@@ -189,168 +201,182 @@
 
 
     <!-- Blog Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid py-5 bg-light wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <!-- Blog list Start -->
                 <div class="col-lg-8">
                     <div class="row g-5">
-                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
-                            <div class="blog-item bg-light rounded overflow-hidden">
-                                <div class="blog-img position-relative overflow-hidden">
-                                    <img class="img-fluid" src="./img/AI.png" alt="">
-                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                        href="https://rushikesh634.hashnode.dev/">Artificial Intelligence</a>
+                        <!-- Blog Card 1 -->
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                                <div class="position-relative">
+                                    <img src="./img/AI.png" class="img-fluid blog-img" alt="AI Blog">
+                                    <a href="https://rushikesh634.hashnode.dev/"
+                                        class="position-absolute top-0 start-0 bg-primary text-white px-4 py-2 rounded-end">
+                                        Artificial Intelligence
+                                    </a>
                                 </div>
-                                <div class="p-4">
-                                    <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
-                                            Kekane</small>
-                                        <small><i class="far fa-calendar-alt text-primary me-2"></i>05 Apr, 2024</small>
+                                <div class="card-body p-4">
+                                    <div class="mb-3 text-muted small d-flex justify-content-between">
+                                        <span><i class="far fa-user text-primary me-2"></i>Er. Rushikesh Kekane</span>
+                                        <span><i class="far fa-calendar-alt text-primary me-2"></i>05 Apr, 2024</span>
                                     </div>
-                                    <h5 class="mb-3">Revolutionizing Robotics and Computer Interaction: The Power of AI
-                                        Voice Technology</h5>
-                                    <p>In the ever-evolving landscape of technology, artificial intelligence (AI) stands
-                                        out as a catalyst for innovation.</p>
-                                    <a class="text-uppercase" href="./blog 1.html">Read More <i
-                                            class="bi bi-arrow-right"></i></a>
+                                    <h5 class="card-title">Revolutionizing Robotics and Computer Interaction: The Power
+                                        of AI Voice Technology</h5>
+                                    <p class="card-text">In the ever-evolving landscape of technology, artificial
+                                        intelligence (AI) stands out as a catalyst for innovation.</p>
+                                    <a href="./blog 1.html" class="text-primary text-uppercase fw-bold small">Read More
+                                        <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.6s">
-                            <div class="blog-item bg-light rounded overflow-hidden">
-                                <div class="blog-img position-relative overflow-hidden">
-                                    <img class="img-fluid" src="./img/DL.png" alt="">
-                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                        href="https://rushikesh634.hashnode.dev/">Deep Learning</a>
+
+                        <!-- Blog Card 2 -->
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                                <div class="position-relative">
+                                    <img src="./img/DL.png" class="img-fluid blog-img" alt="DL Blog">
+                                    <a href="https://rushikesh634.hashnode.dev/"
+                                        class="position-absolute top-0 start-0 bg-primary text-white px-4 py-2 rounded-end">
+                                        Deep Learning
+                                    </a>
                                 </div>
-                                <div class="p-4">
-                                    <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
-                                            Kekane</small>
-                                        <small><i class="far fa-calendar-alt text-primary me-2"></i>19 Mar, 2024</small>
+                                <div class="card-body p-4">
+                                    <div class="mb-3 text-muted small d-flex justify-content-between">
+                                        <span><i class="far fa-user text-primary me-2"></i>Er. Rushikesh Kekane</span>
+                                        <span><i class="far fa-calendar-alt text-primary me-2"></i>19 Mar, 2024</span>
                                     </div>
-                                    <h5 class="mb-3">“Quantum Machine Learning: A Fusion of Deep Learning and Quantum
-                                        Computing”</h5>
-                                    <p>In recent years, the convergence of quantum computing and machine learning has
+                                    <h5 class="card-title">Quantum Machine Learning: A Fusion of Deep Learning and
+                                        Quantum Computing</h5>
+                                    <p class="card-text">The convergence of quantum computing and machine learning has
                                         garnered significant attention in the field.</p>
-                                    <a class="text-uppercase" href="./blog 2.html">Read More <i
+                                    <a href="./blog 2.html" class="text-primary text-uppercase fw-bold small">Read More
+                                        <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blog Card 3 -->
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                                <div class="position-relative">
+                                    <img src="./img/ML.png" class="img-fluid blog-img" alt="ML Blog">
+                                    <a href="https://rushikesh634.hashnode.dev/"
+                                        class="position-absolute top-0 start-0 bg-primary text-white px-4 py-2 rounded-end">
+                                        Machine Learning
+                                    </a>
+                                </div>
+                                <div class="card-body p-4">
+                                    <div class="mb-3 text-muted small d-flex justify-content-between">
+                                        <span><i class="far fa-user text-primary me-2"></i>Er. Rushikesh Kekane</span>
+                                        <span><i class="far fa-calendar-alt text-primary me-2"></i>30 Mar, 2025</span>
+                                    </div>
+                                    <h5 class="card-title">Unraveling the Mysteries of Transfer Learning in Machine
+                                        Learning</h5>
+                                    <p class="card-text">One of the key breakthroughs in machine learning success is
+                                        transfer learning.</p>
+                                    <a href="./blog 3.html" class="text-primary text-uppercase fw-bold small">Read More
+                                        <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blog Card 4 -->
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                                <div class="position-relative">
+                                    <img src="./img/SEO.jpg" class="img-fluid blog-img" alt="SEO Blog">
+                                    <a href="https://rushikesh634.hashnode.dev/"
+                                        class="position-absolute top-0 start-0 bg-primary text-white px-4 py-2 rounded-end">
+                                        SEO Optimization
+                                    </a>
+                                </div>
+                                <div class="card-body p-4">
+                                    <div class="mb-3 text-muted small d-flex justify-content-between">
+                                        <span><i class="far fa-user text-primary me-2"></i>Er. Rushikesh Kekane</span>
+                                        <span><i class="far fa-calendar-alt text-primary me-2"></i>19 Mar, 2025</span>
+                                    </div>
+                                    <h5 class="card-title">Mastering SEO: Proven Strategies to Boost Your Online
+                                        Presence in 2025</h5>
+                                    <p class="card-text">With growing online competition, mastering SEO is essential to
+                                        succeed in 2025.</p>
+                                    <a href="blog 4.html" class="text-primary text-uppercase fw-bold small">Read More <i
                                             class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.6s">
-                            <div class="blog-item bg-light rounded overflow-hidden">
-                                <div class="blog-img position-relative overflow-hidden">
-                                    <img class="img-fluid" src="./img/ML.png" alt="">
-                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                        href="https://rushikesh634.hashnode.dev/">Machine Learning</a>
+                        <!-- Blog Card 5 -->
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                                <div class="position-relative">
+                                    <img src="./img/website development.png" class="img-fluid blog-img"
+                                        alt="Website Dev">
+                                    <a href="https://rushikesh634.hashnode.dev/"
+                                        class="position-absolute top-0 start-0 bg-primary text-white px-4 py-2 rounded-end">
+                                        Expert Website Development
+                                    </a>
                                 </div>
-                                <div class="p-4">
-                                    <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
-                                            Kekane</small>
-                                        <small><i class="far fa-calendar-alt text-primary me-2"></i>30 mar, 2025</small>
+                                <div class="card-body p-4">
+                                    <div class="mb-3 text-muted small d-flex justify-content-between">
+                                        <span><i class="far fa-user text-primary me-2"></i>Er. Rushikesh Kekane</span>
+                                        <span><i class="far fa-calendar-alt text-primary me-2"></i>31 Mar, 2025</span>
                                     </div>
-                                    <h5 class="mb-3">“Unraveling the Mysteries of Transfer Learning in Machine
-                                        Learning”</h5>
-                                    <p>Machine learning has witnessed remarkable advancements over the years, and one of
-                                        the key breakthroughs contributing to its success is transfer learning.</p>
-                                    <a class="text-uppercase" href="./blog 3.html">Read More <i
+                                    <h5 class="card-title">Boost Your Online Presence with Expert Website Development
+                                        Services</h5>
+                                    <p class="card-text">Professional development turns your website into a powerful
+                                        business tool.</p>
+                                    <a href="blog 5.html" class="text-primary text-uppercase fw-bold small">Read More <i
                                             class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.6s">
-                            <div class="blog-item bg-light rounded overflow-hidden">
-                                <div class="blog-img position-relative overflow-hidden">
-                                    <img class="img-fluid" src="./img/SEO.jpg" alt="">
-                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                        href="https://rushikesh634.hashnode.dev/">Search Engine Optimization</a>
+
+                        <!-- Blog Card 6 -->
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                                <div class="position-relative">
+                                    <img src="./img/Ai 1.jpg" class="img-fluid blog-img" alt="AI SD">
+                                    <a href="https://rushikesh634.hashnode.dev/"
+                                        class="position-absolute top-0 start-0 bg-primary text-white px-4 py-2 rounded-end">
+                                        Impact of AI on SD
+                                    </a>
                                 </div>
-                                <div class="p-4">
-                                    <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
-                                            Kekane</small>
-                                        <small><i class="far fa-calendar-alt text-primary me-2"></i>19 mar, 2025</small>
+                                <div class="card-body p-4">
+                                    <div class="mb-3 text-muted small d-flex justify-content-between">
+                                        <span><i class="far fa-user text-primary me-2"></i>Er. Rushikesh Kekane</span>
+                                        <span><i class="far fa-calendar-alt text-primary me-2"></i>6 Apr, 2025</span>
                                     </div>
-                                    <h5 class="mb-3">"Mastering SEO: Proven Strategies to Boost Your Online Presence in
-                                        2025"</h5>
-                                    <p>In 2025, mastering search engine optimization is key for businesses to succeed
-                                        online. With more competition, it's vital to boost website traffic and improve
-                                        google ranking. Our guide shows how SEO is crucial for Indian businesses to grow
-                                        their online presence.</p>
-                                    <a class="text-uppercase" href="blog 4.html">Read More <i
+                                    <h5 class="card-title">The Impact Of AI on Software Development in 2025</h5>
+                                    <p class="card-text">AI is reshaping the way software is built, deployed, and
+                                        maintained.</p>
+                                    <a href="blog 6.html" class="text-primary text-uppercase fw-bold small">Read More <i
                                             class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.6s">
-                            <div class="blog-item bg-light rounded overflow-hidden">
-                                <div class="blog-img position-relative overflow-hidden">
-                                    <img class="img-fluid" src="img/website development.png" alt="">
-                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                        href="https://rushikesh634.hashnode.dev/">Expert Website Development</a>
+
+                        <!-- Blog Card 7 -->
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                                <div class="position-relative">
+                                    <img src="./img/blog7.jpg" class="img-fluid blog-img" alt="Future Youth">
+                                    <a href="https://rushikesh634.hashnode.dev/"
+                                        class="position-absolute top-0 start-0 bg-primary text-white px-4 py-2 rounded-end">
+                                        The Future of Youth
+                                    </a>
                                 </div>
-                                <div class="p-4">
-                                    <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
-                                            Kekane</small>
-                                        <small><i class="far fa-calendar-alt text-primary me-2"></i>31 mar, 2025</small>
+                                <div class="card-body p-4">
+                                    <div class="mb-3 text-muted small d-flex justify-content-between">
+                                        <span><i class="far fa-user text-primary me-2"></i>Er. Rushikesh Kekane</span>
+                                        <span><i class="far fa-calendar-alt text-primary me-2"></i>7 Apr, 2025</span>
                                     </div>
-                                    <h5 class="mb-3">"Boost Your Online Presence with Expert Website Development
-                                        Services for Maximum Impact"</h5>
-                                    <p>Having a strong online presence is key for businesses in India to succeed today.
-                                        Professional web development makes your website a powerful tool to connect with
-                                        customers and grow.</p>
-                                    <a class="text-uppercase" href="blog 5.html">Read More <i
-                                            class="bi bi-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.6s">
-                            <div class="blog-item bg-light rounded overflow-hidden">
-                                <div class="blog-img position-relative overflow-hidden">
-                                    <img class="img-fluid" src="img/Ai 1.jpg" alt="">
-                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                        href="https://rushikesh634.hashnode.dev/">Impact of AI on SD</a>
-                                </div>
-                                <div class="p-4">
-                                    <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
-                                            Kekane</small>
-                                        <small><i class="far fa-calendar-alt text-primary me-2"></i>6 April,
-                                            2025</small>
-                                    </div>
-                                    <h5 class="mb-3">"The Impact Of AI on Software Development in 2025"</h5>
-                                    <p>AI is changing how we make, test, and use software. By 2025, ai in enterprise
-                                        software development will be the norm. Tools will automatically write code and
-                                        make ai-driven saas applications better.</p>
-                                    <a class="text-uppercase" href="blog 6.html">Read More <i
-                                            class="bi bi-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.6s">
-                            <div class="blog-item bg-light rounded overflow-hidden">
-                                <div class="blog-img position-relative overflow-hidden">
-                                    <img class="img-fluid" src="img/blog7.jpg" alt="">
-                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                        href="https://rushikesh634.hashnode.dev/">The Future of Youth</a>
-                                </div>
-                                <div class="p-4">
-                                    <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
-                                            Kekane</small>
-                                        <small><i class="far fa-calendar-alt text-primary me-2"></i>7 April,
-                                            2025</small>
-                                    </div>
-                                    <h5 class="mb-3">"The Future of Youth: How Technology is Revolutionizing the Next
-                                        Generation in 2025"</h5>
-                                    <p>As we enter 2025, the world is changing fast. For today's youth, this means a
-                                        future where future technology and education technology change everything.</p>
-                                    <a class="text-uppercase" href="blog 7.html">Read More <i
+                                    <h5 class="card-title">The Future of Youth: How Technology is Revolutionizing the
+                                        Next Generation</h5>
+                                    <p class="card-text">Future tech and EdTech are shaping the next-gen Indian youth in
+                                        2025.</p>
+                                    <a href="blog 7.html" class="text-primary text-uppercase fw-bold small">Read More <i
                                             class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -361,88 +387,71 @@
 
                 <!-- Sidebar Start -->
                 <div class="col-lg-4">
-
-
-                    <!-- Category Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Categories</h3>
-                        </div>
-                        <div class="link-animated d-flex flex-column justify-content-start">
-                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
-                                    class="bi bi-arrow-right me-2"></i>Artificial Intelligence</a>
-                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
-                                    class="bi bi-arrow-right me-2"></i>Deep Learning</a>
-                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
-                                    class="bi bi-arrow-right me-2"></i>Machine Learning</a>
-                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
-                                    class="bi bi-arrow-right me-2"></i>SEO Optimization</a>
-                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
-                                    class="bi bi-arrow-right me-2"></i>Website Developemnt</a>
-                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
-                                    class="bi bi-arrow-right me-2"></i>Social Media Marketing</a>
-
-
+                    <!-- Categories -->
+                    <div class="mb-5 wow fadeInUp" data-wow-delay="0.3s">
+                        <h4 class="mb-4 pb-2 border-bottom border-primary border-2 d-inline-block">Categories</h4>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action bg-light mb-2 rounded">Artificial
+                                Intelligence</a>
+                            <a href="#" class="list-group-item list-group-item-action bg-light mb-2 rounded">Deep
+                                Learning</a>
+                            <a href="#" class="list-group-item list-group-item-action bg-light mb-2 rounded">Machine
+                                Learning</a>
+                            <a href="#" class="list-group-item list-group-item-action bg-light mb-2 rounded">SEO
+                                Optimization</a>
+                            <a href="#" class="list-group-item list-group-item-action bg-light mb-2 rounded">Website
+                                Development</a>
+                            <a href="#" class="list-group-item list-group-item-action bg-light mb-2 rounded">Social
+                                Media Marketing</a>
                         </div>
                     </div>
-                    <!-- Category End -->
 
-                    <!-- Recent Post Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Recent Post</h3>
-                        </div>
-                        <div class="d-flex rounded overflow-hidden mb-3">
-                            <img class="img-fluid" src="img/blog7.jpg"
-                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                            <a href="blog 7.html" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">
-                                "The Future of Youth: How Technology is Revolutionizing the Next Generation in 2025"
-                            </a>
-                        </div>
-                        <div class="d-flex rounded overflow-hidden mb-3">
-                            <img class="img-fluid" src="img/SEO.jpg"
-                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                            <a href="blog 4.html" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">
-                                "Mastering
-                                SEO: Proven Strategies to Boost Your Online Presence in 2025"
-                            </a>
-                        </div>
-
-                        <div class="d-flex rounded overflow-hidden mb-3">
-                            <img class="img-fluid" src="img/Ai 1.jpg"
-                                style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                            <a href="blog 6.html" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">
-                                "The Impact Of AI On Software Development In 2025"
-                            </a>
-                        </div>
-
-                    </div>
-                    <!-- Recent Post End -->
-
-
-                    <!-- Tags Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Tag Cloud</h3>
-                        </div>
-                        <div class="d-flex flex-wrap m-n1">
-                            <a href="" class="btn btn-light m-1">Design</a>
-                            <a href="" class="btn btn-light m-1">Development</a>
-                            <a href="" class="btn btn-light m-1">Marketing</a>
-                            <a href="" class="btn btn-light m-1">SEO</a>
-                            <a href="" class="btn btn-light m-1">Writing</a>
-                            <a href="" class="btn btn-light m-1">Consulting</a>
-                            <a href="" class="btn btn-light m-1">Analysis</a>
-                            <a href="" class="btn btn-light m-1">Artificial Intelligence</a>
+                    <!-- Recent Posts -->
+                    <div class="mb-5 wow fadeInUp" data-wow-delay="0.4s">
+                        <h4 class="mb-4 pb-2 border-bottom border-primary border-2 d-inline-block">Recent Posts</h4>
+                        <div class="d-flex flex-column gap-3">
+                            <div class="d-flex bg-white rounded shadow-sm overflow-hidden">
+                                <img src="img/blog7.jpg" alt="" style="width: 100px; height: 100px; object-fit: cover;">
+                                <a href="blog 7.html"
+                                    class="px-3 text-dark fw-semibold small d-flex align-items-center">"The Future of
+                                    Youth: How Technology is Revolutionizing the Next Generation"</a>
+                            </div>
+                            <div class="d-flex bg-white rounded shadow-sm overflow-hidden">
+                                <img src="img/SEO.jpg" alt="" style="width: 100px; height: 100px; object-fit: cover;">
+                                <a href="blog 4.html"
+                                    class="px-3 text-dark fw-semibold small d-flex align-items-center">"Mastering SEO:
+                                    Proven Strategies to Boost Your Online Presence in 2025"</a>
+                            </div>
+                            <div class="d-flex bg-white rounded shadow-sm overflow-hidden">
+                                <img src="img/Ai 1.jpg" alt="" style="width: 100px; height: 100px; object-fit: cover;">
+                                <a href="blog 6.html"
+                                    class="px-3 text-dark fw-semibold small d-flex align-items-center">"The Impact Of AI
+                                    On Software Development In 2025"</a>
+                            </div>
                         </div>
                     </div>
-                    <!-- Tags End -->
+
+                    <!-- Tags -->
+                    <div class="mb-5 wow fadeInUp" data-wow-delay="0.5s">
+                        <h4 class="mb-4 pb-2 border-bottom border-primary border-2 d-inline-block">Tag Cloud</h4>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">Design</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">Development</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">Marketing</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">SEO</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">Writing</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">Consulting</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">Analysis</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">Artificial Intelligence</a>
+                        </div>
+                    </div>
                 </div>
                 <!-- Sidebar End -->
             </div>
         </div>
     </div>
     <!-- Blog End -->
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">

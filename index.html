@@ -194,18 +194,24 @@
     <!-- Navbar & Carousel End -->
 
     <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+            <div class="modal-content bg-blur text-white">
+                <!-- Close Button -->
                 <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
+
+                <!-- Search Input -->
                 <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3"
-                            placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    <div class="input-group search-bar">
+                        <span class="input-group-text bg-transparent border-0 pe-0">
+                            <i class="bi bi-search fs-4 text-primary"></i>
+                        </span>
+                        <input type="text" class="form-control bg-transparent border-0 text-white ps-1"
+                            placeholder="Search for anything..." aria-label="Search">
+                        <button class="btn btn-primary px-4 ms-2">Search</button>
                     </div>
                 </div>
             </div>
@@ -213,61 +219,117 @@
     </div>
     <!-- Full Screen Search End -->
 
+    <!-- Custom Styles -->
+    <style>
+        .bg-blur {
+            background: rgba(9, 30, 62, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .search-bar {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+        }
+
+        .modal-body .btn-primary {
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .modal-content {
+            transition: all 0.3s ease;
+            border: none;
+        }
+    </style>
+
+
     <!-- Facts Start -->
-    <div class="container-fluid facts py-5 pt-lg-0">
-        <div class="container py-5 pt-lg-0">
-            <div class="row gx-0">
-                <!-- Happy Clients Counter -->
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
-                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4"
-                        style="height: 150px;">
-                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-users text-primary"></i>
+    <div class="container-fluid facts py-5 bg-light">
+        <div class="container py-5">
+            <div class="row g-4 justify-content-center">
+                <!-- Happy Clients -->
+                <div class="col-md-6 col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="fact-card shadow-lg bg-primary text-white d-flex align-items-center p-4 rounded-4">
+                        <div class="icon-box bg-white text-primary me-4">
+                            <i class="fa fa-users fa-lg"></i>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="text-white mb-0">Happy Clients</h5>
-                            <h1 class="text-white mb-0 counter" data-start="1" data-end="100" data-suffix="%">1%</h1>
+                        <div>
+                            <h5 class="mb-1">Happy Clients</h5>
+                            <h2 class="mb-0 counter" data-start="1" data-end="100" data-suffix="%">1%</h2>
                         </div>
                     </div>
                 </div>
 
-                <!-- Projects Done Counter -->
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4"
-                        style="height: 150px;">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-check text-white"></i>
+                <!-- Projects Done -->
+                <div class="col-md-6 col-lg-4 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="fact-card shadow-lg bg-white text-primary d-flex align-items-center p-4 rounded-4">
+                        <div class="icon-box bg-primary text-white me-4">
+                            <i class="fa fa-check fa-lg"></i>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="text-primary mb-0">Projects Done</h5>
-                            <h1 class="mb-0 counter" data-start="0" data-end="50" data-suffix="+">0</h1>
+                        <div>
+                            <h5 class="mb-1">Projects Completed</h5>
+                            <h2 class="mb-0 counter" data-start="0" data-end="50" data-suffix="+">0+</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Facts End -->
 
+    <!-- Custom CSS -->
+    <style>
+        .fact-card {
+            height: 150px;
+            transition: all 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            transition: background 0.3s ease;
+        }
+    </style>
+
+    <!-- Counter Animation Script -->
     <script>
         function animateCounter(element) {
-            let start = parseInt(element.getAttribute("data-start"));
-            let end = parseInt(element.getAttribute("data-end"));
-            let suffix = element.getAttribute("data-suffix") || "";
-            let duration = 2000; // Duration in milliseconds
-            let stepTime = 10; // Update interval
-            let increment = (end - start) / (duration / stepTime);
+            const start = parseFloat(element.getAttribute("data-start")) || 0;
+            const end = parseFloat(element.getAttribute("data-end")) || 100;
+            const suffix = element.getAttribute("data-suffix") || "";
+            const duration = 2000;
+            const stepTime = 10;
+            const steps = duration / stepTime;
+            const increment = (end - start) / steps;
             let current = start;
-
-            let timer = setInterval(() => {
+            const timer = setInterval(() => {
                 current += increment;
-                element.innerText = Math.floor(current) + suffix;
-
                 if (current >= end) {
-                    element.innerText = end + suffix;
+                    current = end;
                     clearInterval(timer);
                 }
+                element.innerText = Math.floor(current) + suffix;
             }, stepTime);
         }
 
@@ -277,44 +339,57 @@
             });
         });
     </script>
-    <!-- Facts Start -->
+
 
     <!-- About Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="about">
         <div class="container py-5">
-            <div class="row g-5">
+            <div class="row g-5 align-items-center">
+                <!-- Left Content -->
                 <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
+                    <div class="section-title position-relative pb-3 mb-4">
                         <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
-                        <h1 class="mb-0">The Best IT Solution With 3 Years of Experience</h1>
+                        <h1 class="mb-0">Delivering Trusted IT Solutions with 3+ Years of Excellence</h1>
                     </div>
-                    <p class="mb-4">The best IT solution with 3 years of experience refers to a trusted provider of
-                        innovative and reliable technology services, leveraging two years of expertise to deliver
-                        customized, efficient, and high-quality solutions for various business needs.</p>
-                    <div class="row g-0 mb-3">
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>24/7 Support</h5>
-                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Professional Developers</h5>
+                    <p class="mb-4">We specialize in delivering tailored IT services that empower businesses to thrive.
+                        With over 3 years of proven experience, we bring innovation, professionalism, and reliability to
+                        every project—helping you grow efficiently and securely in the digital era.</p>
+
+                    <!-- Features List -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <h5><i class="fa fa-check-circle text-success me-2"></i>24/7 Technical Support</h5>
+                            <h5><i class="fa fa-check-circle text-success me-2"></i>Skilled Developers Team</h5>
+                        </div>
+                        <div class="col-md-6">
+                            <h5><i class="fa fa-check-circle text-success me-2"></i>Client-Focused Approach</h5>
+                            <h5><i class="fa fa-check-circle text-success me-2"></i>On-Time Delivery</h5>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded"
+
+                    <!-- Call Box -->
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="bg-gradient-primary d-flex align-items-center justify-content-center rounded-circle"
                             style="width: 60px; height: 60px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
+                        <div class="ps-3">
+                            <h5 class="mb-1">Call to ask any question</h5>
                             <h4 class="text-primary mb-0">+91 7219080839</h4>
                         </div>
                     </div>
-                    <a href="./quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn"
-                        data-wow-delay="0.9s">Request
-                        A Quote</a>
+
+                    <!-- CTA Button -->
+                    <a href="./quote.html" class="btn btn-primary-gradient py-3 px-5 mt-2 wow zoomIn"
+                        data-wow-delay="0.7s">
+                        Request A Quote
+                    </a>
                 </div>
-                <div class="col-lg-5" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
-                            src="img/about.jpg" style="object-fit: cover;">
+
+                <!-- Right Image -->
+                <div class="col-lg-5 text-center wow zoomIn" data-wow-delay="0.3s">
+                    <div class="position-relative rounded overflow-hidden shadow-lg" style="min-height: 500px;">
+                        <img class="w-100 h-100 rounded" src="img/about.jpg" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -322,281 +397,387 @@
     </div>
     <!-- About End -->
 
+    <!-- Extra Styles -->
+    <style>
+        .btn-primary-gradient {
+            background: linear-gradient(to right, #007bff, #00c6ff);
+            color: #fff;
+            border: none;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .btn-primary-gradient:hover {
+            background: linear-gradient(to right, #0056b3, #0096c7);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.25);
+            color: #fff;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+        }
+
+        .section-title h1 {
+            font-weight: 700;
+            line-height: 1.3;
+        }
+    </style>
+
+
 
     <!-- Features Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="features">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 650px;">
                 <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>
-                <h1 class="mb-0">We Are Here to Grow Our Business Exponentially</h1>
+                <h1 class="mb-0">Accelerating Business Growth with Trusted Digital Solutions</h1>
             </div>
-            <div class="row g-5">
+            <div class="row g-5 align-items-center">
+                <!-- Left Features -->
                 <div class="col-lg-4">
-                    <div class="row g-5">
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
-                                style="width: 60px; height: 60px;">
-                                <i class="fa fa-cubes text-white"></i>
-                            </div>
-                            <h4>Best In Industry</h4>
-                            <p class="mb-0">Best in the industry refers to products, services, or expertise that set the
-                                highest standard in quality, performance, and innovation, consistently surpassing
-                                competitors and meeting exceptional benchmarks.</p>
+                    <div class="feature-box wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon-box bg-gradient-primary">
+                            <i class="fa fa-cubes text-white"></i>
                         </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.3s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
-                                style="width: 60px; height: 60px;">
-                                <i class="fa fa-shield-alt text-white"></i>
-                            </div>
-                            <h4>Secure & Reliable</h4>
-                            <p class="mb-0">We prioritize security and reliability in all our solutions to protect your
-                                data
-                                and ensure uninterrupted business operations with minimal risk.</p>
-                        </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="1.1s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
-                                style="width: 60px; height: 60px;">
-                                <i class="fa fa-lightbulb text-white"></i>
-                            </div>
-                            <h4>Innovative Solutions</h4>
-                            <p class="mb-0">We embrace the latest technologies and creative thinking to build modern,
-                                efficient, and forward-looking digital solutions for your business.</p>
-                        </div>
+                        <h5 class="mt-3">Best In Industry</h5>
+                        <p>Delivering industry-leading quality, performance, and innovation that exceed client
+                            expectations.</p>
                     </div>
-                </div>
-
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s"
-                            src="img/feature.jpg" style="object-fit: cover;">
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="row g-5">
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.4s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
-                                style="width: 60px; height: 60px;">
-                                <i class="fa fa-users-cog text-white"></i>
-                            </div>
-                            <h4>Professional Developers</h4>
-                            <p class="mb-0">Professional developers are skilled individuals who design, build, and
-                                maintain software applications, websites, or systems using specialized programming
-                                languages, tools, and frameworks to deliver functional, scalable, and secure solutions.
-                            </p>
-                        </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
-                                style="width: 60px; height: 60px;">
-                                <i class="fa fa-phone-alt text-white"></i>
-                            </div>
-                            <h4>24/7 Support</h4>
-                            <p class="mb-0">24/7 support is a continuous customer service system that provides
-                                assistance, troubleshooting, and solutions at any time of day or night, ensuring
-                                uninterrupted availability and quick resolution of issues.</p>
-                        </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="1s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
-                                style="width: 60px; height: 60px;">
-                                <i class="fa fa-award text-white"></i>
-                            </div>
-                            <h4>Client Satisfaction</h4>
-                            <p class="mb-0">We strive for 100% client satisfaction by delivering results-driven
-                                solutions,
-                                clear communication, and a collaborative approach to every project.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Features Start -->
-
-
-    <!-- Service Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
-                <h1 class="mb-0">Custom IT Solutions for Our Successful Business</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6 col-sm-12 wow zoomIn" data-wow-delay="0.3s">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center p-3">
-                        <div class="service-icon">
+                    <div class="feature-box wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="icon-box bg-gradient-primary">
                             <i class="fa fa-shield-alt text-white"></i>
                         </div>
-                        <h4 class="mb-3">Digital Marketing</h4>
-                        <p class="m-0">Digital marketing is the strategic use of online platforms, tools, and
-                            technologies to promote products, services, or brands and connect with target audiences
-                            through channels like social media, search engines, email, and websites.</p>
-                        <a class="btn btn-lg btn-primary rounded mt-3" href="service.html">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <h5 class="mt-3">Secure & Reliable</h5>
+                        <p>Ensuring data safety and operational continuity with cutting-edge security protocols.</p>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 wow zoomIn" data-wow-delay="0.6s">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center p-3">
-                        <div class="service-icon">
-                            <i class="fa fa-chart-pie text-white"></i>
+                    <div class="feature-box wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon-box bg-gradient-primary">
+                            <i class="fa fa-lightbulb text-white"></i>
                         </div>
-                        <h4 class="mb-3">Data Analytics</h4>
-                        <p class="m-0">Data Analytics is the systematic process of examining, cleaning, transforming,
-                            and interpreting data to uncover valuable insights, patterns, and trends.</p>
-                        <a class="btn btn-lg btn-primary rounded mt-3" href="service.html">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <h5 class="mt-3">Innovative Solutions</h5>
+                        <p>We deliver forward-thinking, tech-savvy solutions to keep your business ahead of the curve.
+                        </p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 wow zoomIn" data-wow-delay="0.9s">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center p-3">
-                        <div class="service-icon">
-                            <i class="fa fa-code text-white"></i>
+
+                <!-- Center Image -->
+                <div class="col-lg-4 text-center wow zoomIn" data-wow-delay="0.5s">
+                    <img class="img-fluid rounded shadow-lg border" src="img/feature.jpg"
+                        style="max-height: 450px; object-fit: cover;">
+                </div>
+
+                <!-- Right Features -->
+                <div class="col-lg-4">
+                    <div class="feature-box wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="icon-box bg-gradient-primary">
+                            <i class="fa fa-users-cog text-white"></i>
                         </div>
-                        <h4 class="mb-3">Website Development</h4>
-                        <p class="m-0">Website Development is the process of creating, building, and maintaining
-                            websites for hosting on the internet or intranet. It encompasses several aspects, including
-                            web design, web content development, client- and server-side scripting, and network security
-                            configuration.</p>
-                        <a class="btn btn-lg btn-primary rounded mt-3" href="service.html">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <h5 class="mt-3">Expert Developers</h5>
+                        <p>Our team consists of certified professionals with deep technical expertise and real-world
+                            experience.</p>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 wow zoomIn" data-wow-delay="0.3s">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center p-3">
-                        <div class="service-icon">
-                            <i class="fab fa-android text-white"></i>
+                    <div class="feature-box wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="icon-box bg-gradient-primary">
+                            <i class="fa fa-phone-alt text-white"></i>
                         </div>
-                        <h4 class="mb-3">Social Media Marketing</h4>
-                        <p class="m-0">We provide expert social media marketing services, including content creation,
-                            targeted advertising, audience engagement, and performance analytics to enhance brand
-                            visibility, drive traffic, and boost conversions.</p>
-                        <a class="btn btn-lg btn-primary rounded mt-3" href="service.html">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <h5 class="mt-3">24/7 Customer Support</h5>
+                        <p>Always available to help you, anytime — day or night, weekdays or weekends.</p>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 wow zoomIn" data-wow-delay="0.6s">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center p-3">
-                        <div class="service-icon">
-                            <i class="fa fa-search text-white"></i>
+                    <div class="feature-box wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="icon-box bg-gradient-primary">
+                            <i class="fa fa-award text-white"></i>
                         </div>
-                        <h4 class="mb-3">SEO Optimization</h4>
-                        <p class="m-0">SEO Optimization refers to the process of improving a website’s visibility in
-                            search engine results pages (SERPs) through strategic techniques and practices.</p>
-                        <a class="btn btn-lg btn-primary rounded mt-3" href="service.html">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 wow zoomIn" data-wow-delay="0.6s">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center p-3">
-                        <div class="service-icon">
-                            <i class="fa fa-search text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Android Application Development</h4>
-                        <p class="m-0">We build custom Android apps using Java/Kotlin and Android Studio, designed for
-                            performance, user-friendly interfaces, and compatibility across all devices.</p>
-                        <a class="btn btn-lg btn-primary rounded mt-3" href="service.html">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 wow zoomIn" data-wow-delay="0.6s">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center p-3">
-                        <div class="service-icon">
-                            <i class="fa fa-search text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Software Development</h4>
-                        <p class="m-0">We offer end-to-end software development solutions tailored to your business
-                            needs—from planning and UI/UX design to coding, testing, and deployment across web and
-                            mobile platforms.</p>
-                        <a class="btn btn-lg btn-primary rounded mt-3" href="service.html">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Call To Action -->
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
-                    <div
-                        class="bg-primary rounded text-white text-center p-5 d-flex flex-column justify-content-center align-items-center h-100 shadow-sm">
-                        <h3 class="mb-3">Let’s Discuss Your Project</h3>
-                        <p class="mb-3">Connect with us today and get a free consultation tailored to your needs.</p>
-                        <h2 class="mb-0">+91 7219080839</h2>
-                        <a class="btn btn-outline-light mt-3" href="tel:+917219080839">Call Now</a>
+                        <h5 class="mt-3">Client Satisfaction</h5>
+                        <p>We’re committed to your success — every step of the way. Our results speak for themselves.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Service End -->
+    <!-- Features End -->
+
+    <!-- Custom Styling -->
+    <style>
+        .feature-box {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 123, 255, 0.15);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+        }
+
+        .feature-box h5 {
+            font-weight: 600;
+        }
+
+        .feature-box p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        @media (max-width: 767px) {
+            .icon-box {
+                margin: auto;
+            }
+
+            .feature-box {
+                text-align: center;
+            }
+        }
+    </style>
+
+
+
+    <!-- Services Section Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="services">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
+                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
+                <h1 class="mb-0">Tailored IT Solutions Empowering Business Growth</h1>
+            </div>
+            <div class="row g-4">
+                <!-- Service Card Start -->
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
+                    <div
+                        class="service-item bg-white shadow-lg rounded-4 p-4 text-center h-100 border-top border-4 border-primary position-relative overflow-hidden service-hover">
+                        <div class="service-icon bg-primary rounded-circle p-3 mb-4">
+                            <i class="fas fa-bullhorn fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Digital Marketing</h4>
+                        <p>Strategically promote your brand through SEO, PPC, social media, and email campaigns.</p>
+                        <a class="btn-custom" href="service.html">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Repeat This Block for Each Service -->
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div
+                        class="service-item bg-white shadow-lg rounded-4 p-4 text-center h-100 border-top border-4 border-success position-relative overflow-hidden service-hover">
+                        <div class="service-icon bg-success rounded-circle p-3 mb-4">
+                            <i class="fas fa-chart-line fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Data Analytics</h4>
+                        <p>Transform raw data into meaningful insights to drive smarter business decisions.</p>
+                        <a class="btn-custom green" href="service.html">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.4s">
+                    <div
+                        class="service-item bg-white shadow-lg rounded-4 p-4 text-center h-100 border-top border-4 border-danger position-relative overflow-hidden service-hover">
+                        <div class="service-icon bg-danger rounded-circle p-3 mb-4">
+                            <i class="fas fa-laptop-code fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Website Development</h4>
+                        <p>Build fast, responsive websites tailored to your brand and optimized for conversions.</p>
+                        <a class="btn-custom red" href="service.html">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.5s">
+                    <div
+                        class="service-item bg-white shadow-lg rounded-4 p-4 text-center h-100 border-top border-4 border-warning position-relative overflow-hidden service-hover">
+                        <div class="service-icon bg-warning rounded-circle p-3 mb-4">
+                            <i class="fab fa-facebook-messenger fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Social Media Marketing</h4>
+                        <p>Create impact with smart content, paid ads, and daily audience engagement strategies.</p>
+                        <a class="btn-custom yellow" href="service.html">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div
+                        class="service-item bg-white shadow-lg rounded-4 p-4 text-center h-100 border-top border-4 border-info position-relative overflow-hidden service-hover">
+                        <div class="service-icon bg-info rounded-circle p-3 mb-4">
+                            <i class="fas fa-search fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">SEO Optimization</h4>
+                        <p>Boost your Google ranking with cutting-edge on-page & off-page SEO techniques.</p>
+                        <a class="btn-custom blue" href="service.html">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s">
+                    <div
+                        class="service-item bg-white shadow-lg rounded-4 p-4 text-center h-100 border-top border-4 border-secondary position-relative overflow-hidden service-hover">
+                        <div class="service-icon bg-secondary rounded-circle p-3 mb-4">
+                            <i class="fab fa-android fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Android App Development</h4>
+                        <p>Custom Android apps tailored for user experience, speed, and full device compatibility.</p>
+                        <a class="btn-custom dark" href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.8s">
+                    <div
+                        class="service-item bg-white shadow-lg rounded-4 p-4 text-center h-100 border-top border-4 border-dark position-relative overflow-hidden service-hover">
+                        <div class="service-icon bg-dark rounded-circle p-3 mb-4">
+                            <i class="fas fa-cogs fa-2x text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Software Development</h4>
+                        <p>Custom software solutions that scale with your business across all platforms.</p>
+                        <a class="btn-custom dark" href="contact.html">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div class="bg-gradient rounded text-white text-center p-5 d-flex flex-column justify-content-center align-items-center h-100 shadow-lg"
+                        style="background: linear-gradient(to right, #0062E6, #33AEFF);">
+                        <h3 class="mb-3">Let’s Discuss Your Project</h3>
+                        <p class="mb-3">Connect now and get a free consultation tailored to your vision.</p>
+                        <h2 class="mb-3">+91 7219080839</h2>
+                        <a class="btn btn-light rounded-pill px-4 fw-bold" href="tel:+917219080839">Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services Section End -->
+
+    <!-- Custom Button Styles -->
+    <style>
+        .btn-custom {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(to right, #007BFF, #00C6FF);
+        }
+
+        .btn-custom.green {
+            background: linear-gradient(to right, #28a745, #218838);
+        }
+
+        .btn-custom.red {
+            background: linear-gradient(to right, #dc3545, #bd2130);
+        }
+
+        .btn-custom.yellow {
+            background: linear-gradient(to right, #ffc107, #e0a800);
+        }
+
+        .btn-custom.blue {
+            background: linear-gradient(to right, #17a2b8, #138496);
+        }
+
+        .btn-custom.dark {
+            background: linear-gradient(to right, #343a40, #23272b);
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-decoration: none;
+        }
+
+        .service-hover:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+
 
 
     <!-- Pricing Plan Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="pricing">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
+            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 700px;">
                 <h5 class="fw-bold text-primary text-uppercase">Our Pricing Plans</h5>
                 <h1 class="mb-3">Tailored, Transparent & Competitive – Built Around Your Goals</h1>
-                <p class="text-muted">We provide flexible pricing that aligns with your project needs, ensuring value
-                    without compromise.</p>
+                <p class="text-muted">Flexible pricing designed to match your business needs without compromising
+                    quality.</p>
             </div>
+
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="bg-light rounded p-4 shadow-sm">
-                        <p class="mb-4">Our pricing is crafted with fairness and flexibility in mind, based on the
-                            following key factors:</p>
+                <div class="col-lg-9">
+                    <div class="pricing-card bg-white rounded-4 shadow-lg p-4 p-md-5">
+                        <p class="mb-4">Our pricing is thoughtfully structured around several key factors:</p>
                         <ul class="list-group list-group-flush mb-4">
-                            <li class="list-group-item">
+                            <li class="list-group-item bg-transparent border-0">
                                 <i class="fas fa-project-diagram text-primary me-2"></i>
-                                <strong>Project Scope</strong> – Complexity, duration, and overall goals.
+                                <strong>Project Scope:</strong> Complexity, duration, and deliverables.
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item bg-transparent border-0">
                                 <i class="fas fa-cogs text-primary me-2"></i>
-                                <strong>Features & Functionality</strong> – Specific tools, integrations, and business
-                                logic.
+                                <strong>Functionality:</strong> Features, integrations, and automation logic.
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item bg-transparent border-0">
                                 <i class="fas fa-clock text-primary me-2"></i>
-                                <strong>Development Time</strong> – Total design, coding, testing, and deployment time.
+                                <strong>Development Time:</strong> Planning, coding, testing & delivery schedule.
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item bg-transparent border-0">
                                 <i class="fas fa-code text-primary me-2"></i>
-                                <strong>Technology Stack</strong> – Frameworks, databases, and cloud environments.
+                                <strong>Technology Stack:</strong> Tools, languages, and infrastructure used.
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item bg-transparent border-0">
                                 <i class="fas fa-wrench text-primary me-2"></i>
-                                <strong>Support & Maintenance</strong> – Post-launch updates, hosting, and fixes.
+                                <strong>Support & Maintenance:</strong> Hosting, bug fixes, security updates.
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item bg-transparent border-0">
                                 <i class="fas fa-bullhorn text-primary me-2"></i>
-                                <strong>Marketing Services</strong> – SEO, paid ads, social media, and content strategy.
+                                <strong>Marketing Services:</strong> SEO, Meta Ads, social media & content campaigns.
                             </li>
                         </ul>
-                        <p class="text-muted">We take the time to understand your goals and craft a pricing model that
-                            reflects true value for your investment. Our team is committed to delivering quality results
-                            while staying within budget.</p>
-                        <div class="text-center mt-4">
-                            <a href="quote.html" class="btn btn-primary px-5 py-2 rounded-pill">
+
+                        <p class="text-muted mb-4">We prioritize honest, value-driven pricing to ensure that your
+                            investment delivers long-term returns. Let’s discuss the best package for your goals.</p>
+
+                        <div class="text-center">
+                            <a href="quote.html" class="btn btn-primary px-5 py-3 rounded-pill fw-semibold">
                                 <i class="fas fa-comments me-2"></i> Request a Free Consultation
                             </a>
-                            <p class="mt-2 text-muted small">No hidden fees. Just honest, strategic pricing.</p>
-                            <p class="mt-3">
-                                📄 <a href="MOBILE APPLICATION DEVELOPMENT QUOTATION.pdf" download>Download Mobile App
-                                    Quotation</a><br>
-                                📄 <a href="📄 WEBSITE DEVELOPMENT QUOTATION.pdf" download>Download Website Development
-                                    Quotation</a>
-                                📄 <a href="SEO plan .jpg" download>Download SEO Optimization Quotation</a>
-                            </p>
+                            <p class="mt-3 text-muted small mb-1">No hidden fees. Only clarity and commitment.</p>
 
+                            <div class="mt-3">
+                                <p class="mb-1">
+                                    📄 <a href="MOBILE APPLICATION DEVELOPMENT QUOTATION.pdf" download
+                                        class="text-decoration-none text-primary">
+                                        Download Mobile App Quotation
+                                    </a>
+                                </p>
+                                <p class="mb-1">
+                                    📄 <a href="WEBSITE DEVELOPMENT QUOTATION.pdf" download
+                                        class="text-decoration-none text-primary">
+                                        Download Website Development Quotation
+                                    </a>
+                                </p>
+                                <p class="mb-0">
+                                    📄 <a href="SEO plan .jpg" download class="text-decoration-none text-primary">
+                                        Download SEO Optimization Plan
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -604,197 +785,297 @@
         </div>
     </div>
 
+    <!-- Custom Styling -->
+    <style>
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
 
-    <!-- Pricing Plan End -->
+        .pricing-card .list-group-item i {
+            min-width: 24px;
+        }
+
+        .pricing-card a.btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        @media (max-width: 576px) {
+            .pricing-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+
 
     <!-- Quote Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="quote">
         <div class="container py-5">
-            <div class="row g-5">
+            <div class="row g-5 align-items-center">
+                <!-- Left Text Column -->
                 <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
+                    <div class="section-title position-relative pb-3 mb-4">
                         <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>
-                        <h1 class="mb-0">Need A Free Quote? Please Feel Free to Contact Us</h1>
+                        <h1 class="mb-3">Looking For a Custom Quote? Let's Talk.</h1>
                     </div>
-                    <div class="row gx-3">
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                            <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours</h5>
+
+                    <div class="row gx-3 mb-3">
+                        <div class="col-sm-6">
+                            <h5 class="mb-3 wow zoomIn" data-wow-delay="0.2s">
+                                <i class="fa fa-reply text-primary me-2"></i>Reply within 24 hours
+                            </h5>
                         </div>
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                            <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24 hrs telephone support
+                        <div class="col-sm-6">
+                            <h5 class="mb-3 wow zoomIn" data-wow-delay="0.3s">
+                                <i class="fa fa-headset text-primary me-2"></i>24/7 Call Support
                             </h5>
                         </div>
                     </div>
-                    <p class="mb-4">"Need a free quote? Please feel free to contact us" is an invitation extended to
-                        potential customers, offering them the opportunity to receive a detailed, obligation-free cost
-                        estimate or proposal tailored to their specific needs by reaching out through the provided
-                        communication channels.</p>
-                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded"
+
+                    <p class="mb-4">We’re happy to provide a free, no-obligation quote tailored to your unique needs.
+                        Just share a few details below — we’ll get back to you shortly with expert insight and pricing
+                        guidance.</p>
+
+                    <div class="d-flex align-items-center mt-4">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded-circle"
                             style="width: 60px; height: 60px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
+                        <div class="ps-3">
+                            <h6 class="mb-1">Call us anytime</h6>
                             <h4 class="text-primary mb-0">+91 7219080839</h4>
                         </div>
                     </div>
                 </div>
+
+                <!-- Quote Form -->
                 <div class="col-lg-5">
-                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn"
-                        data-wow-delay="0.9s">
+                    <div class="bg-light rounded p-4 shadow-sm wow zoomIn" data-wow-delay="0.5s">
                         <form action="https://formsubmit.co/datasoftwareanalysis@gmail.com" method="POST">
-                            <!-- Hidden config fields -->
+                            <!-- Hidden fields -->
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_subject" value="New Quote Request from Website!">
 
-                            <div class="row g-3">
-                                <div class="col-xl-12">
-                                    <input type="text" name="name" class="form-control bg-light border-0"
-                                        placeholder="Your Name" style="height: 55px;" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="email" name="email" class="form-control bg-light border-0"
-                                        placeholder="Your Email" style="height: 55px;" required>
-                                </div>
-                                <div class="col-12">
-                                    <select name="service" class="form-select bg-light border-0" style="height: 55px;"
-                                        required>
-                                        <option value="" disabled selected>Select A Service</option>
-                                        <option value="Website Development">Website Development</option>
-                                        <option value="SEO Optimization">SEO Optimization</option>
-                                        <option value="Social Media Marketing">Social Media Marketing</option>
-                                        <option value="Data Analytics">Application Development</option>
-                                        <option value="Data Analytics">Software Development</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="message" class="form-control bg-light border-0" rows="3"
-                                        placeholder="Message" required></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
-                                </div>
-                                <div class="col-12 text-center mt-3">
-                                    <p class="text-success fw-bold d-none thank-you-note">Thank you! Your quote request
-                                        has been sent successfully.</p>
-                                </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                    required>
+                                <label for="name"><i class="fa fa-user me-2 text-primary"></i>Your Name</label>
                             </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" id="email"
+                                    placeholder="Your Email" required>
+                                <label for="email"><i class="fa fa-envelope me-2 text-primary"></i>Your Email</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <select name="service" class="form-select" id="service" required>
+                                    <option value="" disabled selected>Select A Service</option>
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="SEO Optimization">SEO Optimization</option>
+                                    <option value="Social Media Marketing">Social Media Marketing</option>
+                                    <option value="Android Application">Android Application</option>
+                                    <option value="Software Development">Software Development</option>
+                                </select>
+                                <label for="service"><i class="fa fa-list me-2 text-primary"></i>Select Service</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <textarea name="message" class="form-control" placeholder="Message" id="message"
+                                    style="height: 120px" required></textarea>
+                                <label for="message"><i class="fa fa-comment-dots me-2 text-primary"></i>Your
+                                    Message</label>
+                            </div>
+
+                            <button class="btn btn-primary w-100 py-3 fw-semibold" type="submit">
+                                <i class="fa fa-paper-plane me-2"></i>Request A Quote
+                            </button>
+
+                            <p class="text-success fw-bold text-center mt-3 d-none thank-you-note">Thank you! We'll be
+                                in touch soon.</p>
                         </form>
-
-                        <script>
-                            // Show thank you note after form submission
-                            document.querySelector('form').addEventListener('submit', function () {
-                                setTimeout(() => {
-                                    document.querySelector('.thank-you-note').classList.remove('d-none');
-                                }, 1000);
-                            });
-                        </script>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Optional Custom Styling -->
+    <style>
+        .form-floating>.form-control:focus~label,
+        .form-floating>.form-select:focus~label {
+            color: #0d6efd;
+        }
+
+        .form-floating label i {
+            margin-right: 6px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0049b3;
+        }
+    </style>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function () {
+            setTimeout(() => {
+                document.querySelector('.thank-you-note').classList.remove('d-none');
+            }, 1200);
+        });
+    </script>
     <!-- Quote End -->
 
 
+
     <!-- Testimonial Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <!-- Testimonial Start -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <div class="container-fluid py-5 bg-light wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
                 <h5 class="fw-bold text-primary text-uppercase">Testimonial</h5>
                 <h1 class="mb-0">What Our Clients Say About Our Software Services</h1>
             </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;">
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">MobileMart Pune</h4>
-                            <small class="text-uppercase">Client</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "MobileMart’s web application has revolutionized our e-commerce analytics! The AI-driven
-                        insights and seamless integration make decision-making effortless. Highly recommended. Great
-                        work by Data-Software Analysis!"
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;">
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Roshan Devkar</h4>
-                            <small class="text-uppercase">IT Engineer</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Amazing experience with Data-Software Analysis! Their expertise boosted our online presence and
-                        efficiency. Highly recommended!"
 
-                        — Roshan Devkar, IT Engineer
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;">
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
+                <!-- Testimonial Item -->
+                <div class="testimonial-item bg-white rounded shadow-sm p-4 my-4">
+                    <div class="d-flex align-items-center border-bottom pb-3 mb-3">
+                        <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg"
+                            style="width: 60px; height: 60px;">
                         <div class="ps-4">
-                            <h4 class="text-primary mb-1">Shibnath Nandi</h4>
-                            <small class="text-uppercase">Front-End Developer</small>
+                            <h5 class="text-dark mb-1">MobileMart Pune</h5>
+                            <small class="text-muted">Client</small>
                         </div>
                     </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Data-Software Analysis transformed our business with smart solutions and expert support. Highly
-                        recommended!"
-                    </div>
+                    <p class="mb-0 text-secondary">
+                        <i class="fa fa-quote-left text-primary me-2"></i>
+                        MobileMart’s web application has revolutionized our e-commerce analytics! The AI-driven insights
+                        and seamless integration make decision-making effortless. Great work by Data-Software Analysis!
+                    </p>
                 </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;">
+
+                <!-- Testimonial Item -->
+                <div class="testimonial-item bg-white rounded shadow-sm p-4 my-4">
+                    <div class="d-flex align-items-center border-bottom pb-3 mb-3">
+                        <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg"
+                            style="width: 60px; height: 60px;">
                         <div class="ps-4">
-                            <h4 class="text-primary mb-1">Harshal Magar</h4>
-                            <small class="text-uppercase">SEO Expert</small>
+                            <h5 class="text-dark mb-1">Roshan Devkar</h5>
+                            <small class="text-muted">IT Engineer</small>
                         </div>
                     </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Great experience with Data-Software Analysis! Expert data and software analysis that truly
-                        delivers results."
-                    </div>
+                    <p class="mb-0 text-secondary">
+                        <i class="fa fa-quote-left text-primary me-2"></i>
+                        Amazing experience with Data-Software Analysis! Their expertise boosted our online presence and
+                        efficiency. Highly recommended!
+                    </p>
                 </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;">
+
+                <!-- Testimonial Item -->
+                <div class="testimonial-item bg-white rounded shadow-sm p-4 my-4">
+                    <div class="d-flex align-items-center border-bottom pb-3 mb-3">
+                        <img class="img-fluid rounded-circle" src="img/testimonial-3.jpg"
+                            style="width: 60px; height: 60px;">
                         <div class="ps-4">
-                            <h4 class="text-primary mb-1">SP-Restro</h4>
-                            <small class="text-uppercase">Client</small>
+                            <h5 class="text-dark mb-1">Shibnath Nandi</h5>
+                            <small class="text-muted">Front-End Developer</small>
                         </div>
                     </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Outstanding experience with Data-Software Analysis! They developed a highly responsive and
-                        visually appealing website for SP-Restro, ensuring smooth navigation, seamless performance, and
-                        enhanced customer engagement."
-                    </div>
+                    <p class="mb-0 text-secondary">
+                        <i class="fa fa-quote-left text-primary me-2"></i>
+                        Data-Software Analysis transformed our business with smart solutions and expert support. Highly
+                        recommended!
+                    </p>
                 </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;">
+
+                <!-- Testimonial Item -->
+                <div class="testimonial-item bg-white rounded shadow-sm p-4 my-4">
+                    <div class="d-flex align-items-center border-bottom pb-3 mb-3">
+                        <img class="img-fluid rounded-circle" src="img/testimonial-3.jpg"
+                            style="width: 60px; height: 60px;">
                         <div class="ps-4">
-                            <h4 class="text-primary mb-1">Usability Hub</h4>
-                            <small class="text-uppercase">Client</small>
+                            <h5 class="text-dark mb-1">Harshal Magar</h5>
+                            <small class="text-muted">SEO Expert</small>
                         </div>
                     </div>
-                    <div class="pt-4 pb-5 px-5">
-                        "Exceptional experience with Data-Software Analysis! They delivered a highly responsive and
+                    <p class="mb-0 text-secondary">
+                        <i class="fa fa-quote-left text-primary me-2"></i>
+                        Great experience with Data-Software Analysis! Expert data and software analysis that truly
+                        delivers results.
+                    </p>
+                </div>
+
+                <!-- Testimonial Item -->
+                <div class="testimonial-item bg-white rounded shadow-sm p-4 my-4">
+                    <div class="d-flex align-items-center border-bottom pb-3 mb-3">
+                        <img class="img-fluid rounded-circle" src="img/testimonial-3.jpg"
+                            style="width: 60px; height: 60px;">
+                        <div class="ps-4">
+                            <h5 class="text-dark mb-1">SP-Restro</h5>
+                            <small class="text-muted">Client</small>
+                        </div>
+                    </div>
+                    <p class="mb-0 text-secondary">
+                        <i class="fa fa-quote-left text-primary me-2"></i>
+                        Outstanding experience with Data-Software Analysis! They developed a highly responsive and
+                        visually appealing website for SP-Restro, ensuring smooth navigation and enhanced customer
+                        engagement.
+                    </p>
+                </div>
+
+                <!-- Testimonial Item -->
+                <div class="testimonial-item bg-white rounded shadow-sm p-4 my-4">
+                    <div class="d-flex align-items-center border-bottom pb-3 mb-3">
+                        <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg"
+                            style="width: 60px; height: 60px;">
+                        <div class="ps-4">
+                            <h5 class="text-dark mb-1">Usability Hub</h5>
+                            <small class="text-muted">Client</small>
+                        </div>
+                    </div>
+                    <p class="mb-0 text-secondary">
+                        <i class="fa fa-quote-left text-primary me-2"></i>
+                        Exceptional experience with Data-Software Analysis! They delivered a highly responsive and
                         data-driven website for UsabilityHub, ensuring seamless performance and user engagement beyond
-                        expectations."
-                    </div>
+                        expectations.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Testimonial End -->
+
+    <!-- Owl Carousel JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".testimonial-carousel").owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: false,
+                dots: true,
+                autoplay: true,
+                smartSpeed: 800,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    992: { items: 3 }
+                }
+            });
+        });
+    </script>
+
+
+    <!-- Testimonial End -->
+
 
 
     <!-- Team Start -->
@@ -865,60 +1146,61 @@
     <!-- Blog Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px;">
                 <h5 class="fw-bold text-primary text-uppercase">Latest Blog</h5>
-                <h1 class="mb-0">Read The Latest Articles from Our Blog Post</h1>
+                <h1 class="mb-0">Read The Latest Articles from Our Blog Posts</h1>
             </div>
+
             <div class="row g-5">
-                <!-- Blog 1 -->
-                <div class="col-md-6 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="blog-item bg-light rounded overflow-hidden h-100">
+                <!-- Blog Post 1 -->
+                <div class="col-md-6 wow slideInUp" data-wow-delay="0.2s">
+                    <div class="blog-item bg-light rounded overflow-hidden shadow-sm h-100">
                         <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="./img/blog7.jpg" alt="SEO Blog Image">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                href="#">
+                            <img class="img-fluid w-100" src="./img/blog7.jpg" alt="Blog: Future of Youth & Technology">
+                            <a href="#"
+                                class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-4 py-2 px-4 small fw-semibold">
                                 The Future of Youth
                             </a>
                         </div>
                         <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
-                                    Kekane</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>7 April,
-                                    2025</small>
+                            <div class="d-flex mb-3 small text-muted">
+                                <span class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
+                                    Kekane</span>
+                                <span><i class="far fa-calendar-alt text-primary me-2"></i>7 April, 2025</span>
                             </div>
-                            <h5 class="mb-3">"The Future of Youth: How Technology is Revolutionizing the Next
-                                Generation in 2025"
-                            </h5>
-                            <p>As we enter 2025, the world is changing fast. For today's youth, this means a
-                                future where future technology and education technology change everything.</p>
-                            <a class="text-uppercase text-primary fw-bold" href="blog.html">Read More <i
-                                    class="bi bi-arrow-right"></i></a>
+                            <h5 class="mb-3 text-dark">"The Future of Youth: How Technology is Revolutionizing the Next
+                                Generation in 2025"</h5>
+                            <p class="mb-3 text-secondary">As we enter 2025, the world is changing fast. For today's
+                                youth, this means a future where future technology and education technology change
+                                everything.</p>
+                            <a class="text-uppercase fw-bold text-primary" href="blog.html">Read More <i
+                                    class="bi bi-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blog 2 -->
-                <div class="col-md-6 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="blog-item bg-light rounded overflow-hidden h-100">
+                <!-- Blog Post 2 -->
+                <div class="col-md-6 wow slideInUp" data-wow-delay="0.4s">
+                    <div class="blog-item bg-light rounded overflow-hidden shadow-sm h-100">
                         <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/Ai 1.jpg" alt="AI Blog Image">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                href="#">
+                            <img class="img-fluid w-100" src="img/Ai 1.jpg"
+                                alt="Blog: Impact of AI on Software Development">
+                            <a href="#"
+                                class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-4 py-2 px-4 small fw-semibold">
                                 Impact of AI on SD
                             </a>
                         </div>
                         <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
-                                    Kekane</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>6 April, 2025</small>
+                            <div class="d-flex mb-3 small text-muted">
+                                <span class="me-3"><i class="far fa-user text-primary me-2"></i>Er. Rushikesh
+                                    Kekane</span>
+                                <span><i class="far fa-calendar-alt text-primary me-2"></i>6 April, 2025</span>
                             </div>
-                            <h5 class="mb-3">"The Impact Of AI on Software Development in 2025"</h5>
-                            <p>AI is revolutionizing how we create software. From automated code generation to AI-driven
-                                SaaS, the future is intelligent.</p>
-                            <a class="text-uppercase text-primary fw-bold" href="blog.html">Read More <i
-                                    class="bi bi-arrow-right"></i></a>
+                            <h5 class="mb-3 text-dark">"The Impact Of AI on Software Development in 2025"</h5>
+                            <p class="mb-3 text-secondary">AI is revolutionizing how we create software. From automated
+                                code generation to AI-driven SaaS, the future is intelligent.</p>
+                            <a class="text-uppercase fw-bold text-primary" href="blog.html">Read More <i
+                                    class="bi bi-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -926,62 +1208,73 @@
 
             <!-- View All Blogs Button -->
             <div class="text-center mt-5">
-                <a href="./blog.html" class="btn btn-primary px-4 py-2 fw-bold rounded-pill shadow-sm">View Blogs</a>
+                <a href="./blog.html" class="btn btn-primary px-4 py-2 rounded-pill shadow-sm fw-bold">
+                    <i class="bi bi-journal-text me-2"></i>View All Blogs
+                </a>
             </div>
         </div>
     </div>
+    <!-- Blog End -->
 
-
-    <!-- Blog Start -->
 
 
     <!-- Vendor Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 mb-5">
-            <h2 class="text-center mb-4">Our Clients</h2> <!-- Added Title -->
-            <div class="bg-white">
-                <div class="owl-carousel vendor-carousel">
-                    <div
-                        style="width: 150px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                        <img src="./img/logo.png" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+            <h2 class="text-center mb-5 fw-bold text-primary text-uppercase">Our Clients</h2>
+            <div class="bg-white py-3 px-2 rounded shadow-sm">
+                <div class="owl-carousel vendor-carousel d-flex align-items-center">
+                    <!-- Client 1 -->
+                    <div class="d-flex align-items-center justify-content-center p-2" style="height: 100px;">
+                        <img src="./img/logo.png" alt="Client Logo 1" class="img-fluid"
+                            style="max-height: 90px; object-fit: contain;">
                     </div>
-                    <div
-                        style="width: 150px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                        <img src="./img/asset 1.jpeg" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+                    <!-- Client 2 -->
+                    <div class="d-flex align-items-center justify-content-center p-2" style="height: 100px;">
+                        <img src="./img/asset 1.jpeg" alt="Client Logo 2" class="img-fluid"
+                            style="max-height: 90px; object-fit: contain;">
                     </div>
-                    <div
-                        style="width: 150px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                        <img src="./img/asset 0.png" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+                    <!-- Client 3 -->
+                    <div class="d-flex align-items-center justify-content-center p-2" style="height: 100px;">
+                        <img src="./img/asset 0.png" alt="Client Logo 3" class="img-fluid"
+                            style="max-height: 90px; object-fit: contain;">
                     </div>
-                    <div
-                        style="width: 150px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                        <img src="./img/services3.jpg" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+                    <!-- Client 4 -->
+                    <div class="d-flex align-items-center justify-content-center p-2" style="height: 100px;">
+                        <img src="./img/services3.jpg" alt="Client Logo 4" class="img-fluid"
+                            style="max-height: 90px; object-fit: contain;">
                     </div>
-                    <div
-                        style="width: 150px; height: 100px; display: flex; align-items: center; justify-content: center; background: #544e4e; font-weight: bold; color: white;">
+                    <!-- Text-based Client -->
+                    <div class="d-flex align-items-center justify-content-center bg-dark text-white fw-semibold rounded p-2"
+                        style="height: 100px;">
                         NewsMonkey
                     </div>
-                    <div
-                        style="width: 150px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                        <img src="img/vendor-7.jpg" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+                    <!-- Client 6 -->
+                    <div class="d-flex align-items-center justify-content-center p-2" style="height: 100px;">
+                        <img src="./img/vendor-7.jpg" alt="Client Logo 6" class="img-fluid"
+                            style="max-height: 90px; object-fit: contain;">
                     </div>
-                    <div
-                        style="width: 150px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                        <img src="img/vendor-8.jpg" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+                    <!-- Client 7 -->
+                    <div class="d-flex align-items-center justify-content-center p-2" style="height: 100px;">
+                        <img src="./img/vendor-8.jpg" alt="Client Logo 7" class="img-fluid"
+                            style="max-height: 90px; object-fit: contain;">
                     </div>
-                    <div
-                        style="width: 150px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                        <img src="img/vendor-9.jpg" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+                    <!-- Client 8 -->
+                    <div class="d-flex align-items-center justify-content-center p-2" style="height: 100px;">
+                        <img src="./img/vendor-9.jpg" alt="Client Logo 8" class="img-fluid"
+                            style="max-height: 90px; object-fit: contain;">
                     </div>
-                    <div
-                        style="width: 150px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                        <img src="img/DSN.png" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+                    <!-- Client 9 -->
+                    <div class="d-flex align-items-center justify-content-center p-2" style="height: 100px;">
+                        <img src="./img/DSN.png" alt="Client Logo 9" class="img-fluid"
+                            style="max-height: 90px; object-fit: contain;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Vendor End -->
+
 
 
     <!-- Footer Start -->

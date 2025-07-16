@@ -184,95 +184,121 @@
 
 
     <!-- Quote Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="quote">
         <div class="container py-5">
-            <div class="row g-5">
+            <div class="row g-5 align-items-center">
+                <!-- Left Text Column -->
                 <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
+                    <div class="section-title position-relative pb-3 mb-4">
                         <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>
-                        <h1 class="mb-0">Need A Free Quote? Please Feel Free to Contact Us</h1>
+                        <h1 class="mb-3">Looking For a Custom Quote? Let's Talk.</h1>
                     </div>
-                    <div class="row gx-3">
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                            <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours</h5>
+
+                    <div class="row gx-3 mb-3">
+                        <div class="col-sm-6">
+                            <h5 class="mb-3 wow zoomIn" data-wow-delay="0.2s">
+                                <i class="fa fa-reply text-primary me-2"></i>Reply within 24 hours
+                            </h5>
                         </div>
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                            <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24 hrs telephone support
+                        <div class="col-sm-6">
+                            <h5 class="mb-3 wow zoomIn" data-wow-delay="0.3s">
+                                <i class="fa fa-headset text-primary me-2"></i>24/7 Call Support
                             </h5>
                         </div>
                     </div>
-                    <p class="mb-4">"Need a free quote? Please feel free to contact us" is an invitation extended to
-                        potential customers, offering them the opportunity to receive a detailed, obligation-free cost
-                        estimate or proposal tailored to their specific needs by reaching out through the provided
-                        communication channels.</p>
-                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded"
+
+                    <p class="mb-4">We’re happy to provide a free, no-obligation quote tailored to your unique needs.
+                        Just share a few details below — we’ll get back to you shortly with expert insight and pricing
+                        guidance.</p>
+
+                    <div class="d-flex align-items-center mt-4">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded-circle"
                             style="width: 60px; height: 60px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
+                        <div class="ps-3">
+                            <h6 class="mb-1">Call us anytime</h6>
                             <h4 class="text-primary mb-0">+91 7219080839</h4>
                         </div>
                     </div>
                 </div>
+
+                <!-- Quote Form -->
                 <div class="col-lg-5">
-                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn"
-                        data-wow-delay="0.9s">
+                    <div class="bg-light rounded p-4 shadow-sm wow zoomIn" data-wow-delay="0.5s">
                         <form action="https://formsubmit.co/datasoftwareanalysis@gmail.com" method="POST">
-                            <!-- Hidden config fields -->
+                            <!-- Hidden fields -->
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_subject" value="New Quote Request from Website!">
 
-                            <div class="row g-3">
-                                <div class="col-xl-12">
-                                    <input type="text" name="name" class="form-control bg-light border-0"
-                                        placeholder="Your Name" style="height: 55px;" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="email" name="email" class="form-control bg-light border-0"
-                                        placeholder="Your Email" style="height: 55px;" required>
-                                </div>
-                                <div class="col-12">
-                                    <select name="service" class="form-select bg-light border-0" style="height: 55px;"
-                                        required>
-                                        <option value="" disabled selected>Select A Service</option>
-                                        <option value="Website Development">Website Development</option>
-                                        <option value="SEO Optimization">SEO Optimization</option>
-                                        <option value="Social Media Marketing">Social Media Marketing</option>
-                                        <option value="Data Analytics">Application Development</option>
-                                        <option value="Data Analytics">Software Development</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="message" class="form-control bg-light border-0" rows="3"
-                                        placeholder="Message" required></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
-                                </div>
-                                <div class="col-12 text-center mt-3">
-                                    <p class="text-success fw-bold d-none thank-you-note">Thank you! Your quote request
-                                        has been sent successfully.</p>
-                                </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                    required>
+                                <label for="name"><i class="fa fa-user me-2 text-primary"></i>Your Name</label>
                             </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" id="email"
+                                    placeholder="Your Email" required>
+                                <label for="email"><i class="fa fa-envelope me-2 text-primary"></i>Your Email</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <select name="service" class="form-select" id="service" required>
+                                    <option value="" disabled selected>Select A Service</option>
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="SEO Optimization">SEO Optimization</option>
+                                    <option value="Social Media Marketing">Social Media Marketing</option>
+                                    <option value="Android Application">Android Application</option>
+                                    <option value="Software Development">Software Development</option>
+                                </select>
+                                <label for="service"><i class="fa fa-list me-2 text-primary"></i>Select Service</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <textarea name="message" class="form-control" placeholder="Message" id="message"
+                                    style="height: 120px" required></textarea>
+                                <label for="message"><i class="fa fa-comment-dots me-2 text-primary"></i>Your
+                                    Message</label>
+                            </div>
+
+                            <button class="btn btn-primary w-100 py-3 fw-semibold" type="submit">
+                                <i class="fa fa-paper-plane me-2"></i>Request A Quote
+                            </button>
+
+                            <p class="text-success fw-bold text-center mt-3 d-none thank-you-note">Thank you! We'll be
+                                in touch soon.</p>
                         </form>
-
-                        <script>
-                            // Show thank you note after form submission
-                            document.querySelector('form').addEventListener('submit', function () {
-                                setTimeout(() => {
-                                    document.querySelector('.thank-you-note').classList.remove('d-none');
-                                }, 1000);
-                            });
-                        </script>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Optional Custom Styling -->
+    <style>
+        .form-floating>.form-control:focus~label,
+        .form-floating>.form-select:focus~label {
+            color: #0d6efd;
+        }
+
+        .form-floating label i {
+            margin-right: 6px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0049b3;
+        }
+    </style>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function () {
+            setTimeout(() => {
+                document.querySelector('.thank-you-note').classList.remove('d-none');
+            }, 1200);
+        });
+    </script>
     <!-- Quote End -->
 
 
