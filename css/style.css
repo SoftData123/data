@@ -525,3 +525,25 @@ h6,
         padding: 0.5rem 1rem;
     }
 }
+
+.chat-whatsapp-btn {
+  position: fixed;
+  bottom: 140px; /* place above back-to-top */
+  right: 20px;
+  z-index: 1000;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.chat-whatsapp-btn:hover {
+  background-color: #1ebc59;
+  color: white;
+}
