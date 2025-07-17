@@ -73,8 +73,7 @@
                     <!-- career -->
                     <small>
                         <i class="me-5"></i>
-                        <a href="./Carrer.html"
-                            class="clickable">Careers</a>
+                        <a href="./Carrer.html" class="clickable">Careers</a>
                     </small>
                 </div>
             </div>
@@ -328,70 +327,70 @@
 
                     <!-- Comment Form Start -->
                     <div class="bg-light rounded p-5">
-    <div class="section-title section-title-sm position-relative pb-3 mb-4">
-        <h3 class="mb-0">Leave A Comment</h3>
-    </div>
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Leave A Comment</h3>
+                        </div>
 
-    <form id="comment-form">
-        <!-- FormSubmit Hidden Fields -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="box">
-        <input type="hidden" name="_subject" value="New Comment From Website">
+                        <form id="comment-form">
+                            <!-- FormSubmit Hidden Fields -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="box">
+                            <input type="hidden" name="_subject" value="New Comment From Website">
 
-        <div class="row g-3">
-            <div class="col-12 col-sm-6">
-                <input type="text" name="name" class="form-control bg-white border-0"
-                    placeholder="Your Name" style="height: 55px;" required>
-            </div>
-            <div class="col-12 col-sm-6">
-                <input type="email" name="email" class="form-control bg-white border-0"
-                    placeholder="Your Email" style="height: 55px;" required>
-            </div>
-            <div class="col-12">
-                <input type="text" name="website" class="form-control bg-white border-0"
-                    placeholder="Website" style="height: 55px;">
-            </div>
-            <div class="col-12">
-                <textarea name="comment" class="form-control bg-white border-0" rows="5"
-                    placeholder="Comment" required></textarea>
-            </div>
-            <div class="col-12">
-                <button class="btn btn-primary w-100 py-3" type="submit">Leave Your Comment</button>
-            </div>
-            <div class="col-12 text-center mt-3">
-                <p class="text-success fw-bold d-none thank-you-message">
-                    ✅ Thank you! Your comment has been submitted successfully.
-                </p>
-            </div>
-        </div>
-    </form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" name="name" class="form-control bg-white border-0"
+                                        placeholder="Your Name" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" name="email" class="form-control bg-white border-0"
+                                        placeholder="Your Email" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="website" class="form-control bg-white border-0"
+                                        placeholder="Website" style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="comment" class="form-control bg-white border-0" rows="5"
+                                        placeholder="Comment" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Leave Your Comment</button>
+                                </div>
+                                <div class="col-12 text-center mt-3">
+                                    <p class="text-success fw-bold d-none thank-you-message">
+                                        ✅ Thank you! Your comment has been submitted successfully.
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
 
-    <!-- Script to handle inline submission without redirection -->
-    <script>
-        document.getElementById('comment-form').addEventListener('submit', function (e) {
-            e.preventDefault();
+                        <!-- Script to handle inline submission without redirection -->
+                        <script>
+                            document.getElementById('comment-form').addEventListener('submit', function (e) {
+                                e.preventDefault();
 
-            const form = e.target;
-            const formData = new FormData(form);
+                                const form = e.target;
+                                const formData = new FormData(form);
 
-            fetch('https://formsubmit.co/ajax/datasoftwareanalysis@gmail.com', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    form.reset();
-                    document.querySelector('.thank-you-message').classList.remove('d-none');
-                } else {
-                    alert('❌ Failed to send comment. Please try again.');
-                }
-            })
-            .catch(error => {
-                alert('❌ An error occurred: ' + error.message);
-            });
-        });
-    </script>
-</div>
+                                fetch('https://formsubmit.co/ajax/datasoftwareanalysis@gmail.com', {
+                                    method: 'POST',
+                                    body: formData
+                                })
+                                    .then(response => {
+                                        if (response.ok) {
+                                            form.reset();
+                                            document.querySelector('.thank-you-message').classList.remove('d-none');
+                                        } else {
+                                            alert('❌ Failed to send comment. Please try again.');
+                                        }
+                                    })
+                                    .catch(error => {
+                                        alert('❌ An error occurred: ' + error.message);
+                                    });
+                            });
+                        </script>
+                    </div>
 
                     <!-- Comment Form End -->
                 </div>
@@ -555,7 +554,8 @@
                         mission
                         is to empower businesses with innovative tools and insights that drive growth and efficiency.
                     </p>
-
+                    <!-- Stamp Image Enlarged -->
+                    <img src="./img/stamp.png" alt="Official Stamp" style="width: 160px; margin-top: 20px;">
                 </div>
 
                 <div class="col-lg-8 col-md-6">
@@ -584,7 +584,7 @@
 
 
                             <div class="d-flex mt-4">
-                                 <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
                                     href="https://x.com/software930061"><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
                                     href="https://www.facebook.com/profile.php?id=100093082359714"><i
