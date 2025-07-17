@@ -73,8 +73,7 @@
                     <!-- career -->
                     <small>
                         <i class="me-5"></i>
-                        <a href="./Carrer.html"
-                            class="clickable">Careers</a>
+                        <a href="./Carrer.html" class="clickable">Careers</a>
                     </small>
                 </div>
             </div>
@@ -106,33 +105,11 @@
                     Data-Software Analysis
                 </span>
             </a>
-            <script>
-                function applyResponsiveStyles() {
-                    var brandName = document.getElementById("brand-name");
-                    if (window.innerWidth <= 768) {
-                        brandName.style.color = "blue"; // Blue on mobile
-                        brandName.style.fontSize = "0.9rem"; // Even smaller for mobile
-                    } else {
-                        brandName.style.fontSize = "1rem"; // Small for desktop
-                    }
-                }
-
-                // Apply styles on load and when resizing
-                window.addEventListener("load", applyResponsiveStyles);
-                window.addEventListener("resize", applyResponsiveStyles);
-
-                // Change color on scroll (only for desktop)
-                window.addEventListener("scroll", function () {
-                    var brandName = document.getElementById("brand-name");
-                    if (window.innerWidth > 768) {
-                        brandName.style.color = window.scrollY > 50 ? "blue" : "white";
-                    }
-                });
-            </script>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
@@ -151,6 +128,12 @@
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
+
+                <!-- Search Button Trigger -->
+                <button id="searchBtn" type="button" class="btn text-white p-3 d-none d-lg-block" data-bs-toggle="modal"
+                    data-bs-target="#searchModal">
+                    <i class="fa fa-search"></i>
+                </button>
             </div>
         </nav>
 
@@ -158,7 +141,7 @@
             <div class="row py-5">
                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
                     <h1 class="display-4 text-white animated zoomIn">Free Quote</h1>
-                    <a href="" class="h5 text-white">Home</a>
+                    <a href="index.html" class="h5 text-white">Home</a>
                     <i class="far fa-circle text-white px-2"></i>
                     <a href="" class="h5 text-white">Free Quote</a>
                 </div>
@@ -166,6 +149,96 @@
         </div>
     </div>
     <!-- Navbar End -->
+
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-3">
+                <form onsubmit="return handleSearch(event)">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="searchInput" required>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive + Scroll Script -->
+    <script>
+        function applyResponsiveStyles() {
+            const brandName = document.getElementById("brand-name");
+            if (window.innerWidth <= 768) {
+                brandName.style.color = "blue";
+                brandName.style.fontSize = "0.9rem";
+            } else {
+                brandName.style.fontSize = "1rem";
+            }
+        }
+
+        window.addEventListener("load", applyResponsiveStyles);
+        window.addEventListener("resize", applyResponsiveStyles);
+
+        // Scroll behavior
+        window.addEventListener("scroll", function () {
+            const brandName = document.getElementById("brand-name");
+            const searchBtn = document.getElementById("searchBtn");
+            if (window.innerWidth > 768) {
+                const isScrolled = window.scrollY > 50;
+                brandName.style.color = isScrolled ? "blue" : "white";
+                searchBtn.classList.toggle("text-white", !isScrolled);
+                searchBtn.classList.toggle("text-black", isScrolled);
+            }
+        });
+
+        // Search redirect logic
+        function handleSearch(event) {
+            event.preventDefault();
+            const query = document.getElementById("searchInput").value.toLowerCase().trim();
+
+            const routeMap = {
+                "home": "index.html",
+                "about": "about.html",
+                "services": "service.html",
+                "service": "service.html",
+                "blog": "blog.html",
+                "features": "feature.html",
+                "feature": "feature.html",
+                "testimonial": "testimonial.html",
+                "quote": "quote.html",
+                "contact": "contact.html",
+                "login": "login.html",
+                "register": "login.html"
+            };
+
+            const sectionMap = {
+                "our features": "feature.html#features",
+                "our services": "service.html#services",
+                "team": "about.html#team",
+                "contact us": "contact.html#contact",
+                "get quote": "quote.html#quote",
+                "testimonials": "testimonial.html#testimonials"
+            };
+
+            for (let section in sectionMap) {
+                if (query.includes(section)) {
+                    window.location.href = sectionMap[section];
+                    return false;
+                }
+            }
+
+            for (let keyword in routeMap) {
+                if (query.includes(keyword)) {
+                    window.location.href = routeMap[keyword];
+                    return false;
+                }
+            }
+
+            alert("No matching content found.");
+            return false;
+        }
+    </script>
+
 
 
     <!-- Full Screen Search Start -->
@@ -375,7 +448,7 @@
 
 
                             <div class="d-flex mt-4">
-                                 <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
                                     href="https://x.com/software930061"><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
                                     href="https://www.facebook.com/profile.php?id=100093082359714"><i
