@@ -81,11 +81,13 @@
 
         <h2 class="form-title">Apply for Our Internship Program</h2>
 
-        <form action="./server/submit.php" method="POST" enctype="multipart/form-data">
+        <form action="https://formspree.io/f/mayv1234" method="POST" enctype="multipart/form-data">
+            <!-- Replace the above action URL with your actual Formspree endpoint -->
+
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label class="form-label">Full Name *</label>
-                    <input type="text" class="form-control" name="Full_Name" required>
+                    <input type="text" class="form-control" name="Full Name" required>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Email Address *</label>
@@ -96,11 +98,11 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label class="form-label">Phone Number *</label>
-                    <input type="tel" class="form-control" name="Phone" required>
+                    <input type="tel" class="form-control" name="Phone Number" required>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Internship Role *</label>
-                    <select class="form-select" name="Position_Applied" required>
+                    <select class="form-select" name="Position Applied" required>
                         <option value="">Choose...</option>
                         <option value="Web Development">Web Development</option>
                         <option value="UI/UX Design">UI/UX Design</option>
@@ -113,18 +115,20 @@
 
             <div class="mb-3">
                 <label class="form-label">Preferred Start Date *</label>
-                <input type="date" class="form-control" name="Start_Date" required>
+                <input type="date" class="form-control" name="Start Date" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Upload Resume (PDF/DOC) *</label>
-                <input class="form-control" type="file" name="attachment" accept=".pdf,.doc,.docx" required>
+                <input class="form-control" type="file" name="Resume" accept=".pdf,.doc,.docx" required>
             </div>
 
             <div class="mb-4">
                 <label class="form-label">Why do you want this internship? *</label>
-                <textarea class="form-control" name="Cover_Letter" rows="4" required></textarea>
+                <textarea class="form-control" name="Cover Letter" rows="4" required></textarea>
             </div>
+
+            <input type="hidden" name="_subject" value="New Internship Application - Data-Software Analysis">
 
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary btn-lg shadow">Submit Application</button>
@@ -139,9 +143,8 @@
                     Copyright 2023 &copy; <strong><span>Data-Software Analysis</span></strong>. All Rights Reserved
                 </div>
                 <div class="credits mt-1">
-                    <p class="mb-0" style="align-self: center;">Made in <b><span style="color: orange;">IN</span>D<span
-                                style="color: rgb(0, 255, 0);">IA</span></b> with <span
-                            style="color: rgb(243, 17, 17);">&#x2764;</span></p>
+                    <p class="mb-0">Made in <b><span style="color: orange;">IN</span>D<span
+                                style="color: green;">IA</span></b> with <span style="color: red;">&#x2764;</span></p>
                 </div>
             </div>
         </div>
