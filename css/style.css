@@ -528,7 +528,7 @@ h6,
 
 .chat-whatsapp-btn {
   position: fixed;
-  bottom: 10px; /* place above back-to-top */
+  bottom: 5px; /* place above back-to-top */
   right: 20px;
   z-index: 1000;
   background-color: #25d366;
